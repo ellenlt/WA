@@ -1,0 +1,30 @@
+table {
+	width: 600px;
+	font: 13px Tahoma;
+	background-color: #eeeff2;
+}
+
+td {
+    border-width: 1px;
+    
+    border-top-style: solid;
+	border-top-color: white;
+
+    border-bottom-style: solid;
+	border-bottom-color: white;
+}
+
+.col1 {padding-left: 10px;}
+
+tr.odd {background-color: #dfe1e7;}
+
+.center-aligned {text-align: center;}
+
+thead {
+	background-color: #687291;
+	font-weight: bold;
+	color: white;
+}
+
+tfoot {display: none;}
+

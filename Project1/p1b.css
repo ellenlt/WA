@@ -1,0 +1,21 @@
+table {
+    width: 600px;
+	font: 13px Tahoma;
+
+	border-width: 10px;
+	border-style: solid;
+	border-color: #d0d0ff;
+	padding: 20px;
+}
+.center-aligned {text-align: center;}
+
+thead, tfoot {
+	font-weight: bold;
+}
+
+tfoot td {
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: black;
+}
+
