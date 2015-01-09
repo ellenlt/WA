@@ -1,0 +1,18 @@
+.container{
+    width: 100%;
+    height: 100%;
+}
+.leftNews{
+    float: left;
+    width: 50%;
+    height: 1000px;
+}
+.rightNews{
+    float: left;
+    width: 50%;
+    height: 1000px;
+}
+iframe{
+    width: 100%;
+    height: 1000px;
+}
