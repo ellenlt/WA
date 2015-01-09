@@ -1,16 +1,15 @@
 body {
     /* Centers and adjusts length of the line that is
      separating the tabs from the rest of the page */
-    margin-left: auto;
-    margin-right: auto;
-    width: 98%;
+    margin: 7px auto;
+    width: 97%;
     
 }
 
 #tabs {
     float: left;
     width:100%;
-    font: 30px Tahoma;
+    font: 13px Tahoma;
     
     /* Adds line separating tabs from rest of page */
    border-bottom: 1px solid #cccccc;
@@ -21,8 +20,8 @@ body {
     list-style: none;
     margin: 0;
 
-    /* Adds padding on sides of the entire tabbed bar */
-    padding:5px 5px;
+    /* Positions tabs on the separator line */
+    padding:0px 2px;
 }
 
 #tabs ul li {
@@ -32,8 +31,9 @@ body {
     background-repeat: no-repeat;
     background-position: right top;
     
-    /* Adds space between each tab */
-    margin:0px 3px;
+    /* Separation between tabs */
+    margin-left: 2px;
+    margin-right: 3px;
     padding:0;
 }
 

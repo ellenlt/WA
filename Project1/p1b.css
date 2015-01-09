@@ -1,12 +1,17 @@
+body {
+    margin: 20px;
+}
+
 table {
-    width: 600px;
 	font: 13px Tahoma;
 
 	border-width: 10px;
 	border-style: solid;
 	border-color: #d0d0ff;
 	padding: 20px;
+
 }
+
 .center-aligned {text-align: center;}
 
 thead, tfoot {
@@ -17,5 +22,11 @@ tfoot td {
 	border-top-width: 2px;
 	border-top-style: solid;
 	border-top-color: black;
+    padding-top: 5px;
 }
 
+td {
+    padding-right: 9px;
+    padding-bottom: 3px;
+    white-space: nowrap;
+}
