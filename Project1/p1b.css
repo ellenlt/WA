@@ -4,12 +4,8 @@ body {
 
 table {
 	font: 13px Tahoma;
-
-	border-width: 10px;
-	border-style: solid;
-	border-color: #d0d0ff;
+    border: 10px solid #d0d0ff;
 	padding: 20px;
-
 }
 
 .center-aligned {text-align: center;}
@@ -19,14 +15,16 @@ thead, tfoot {
 }
 
 tfoot td {
-	border-top-width: 2px;
-	border-top-style: solid;
-	border-top-color: black;
+	border-top: 2px solid black;
     padding-top: 5px;
 }
 
-td {
+td.col1 {
+    padding-left: 0px;
     padding-right: 9px;
-    padding-bottom: 3px;
+}
+
+td {
+    padding: 2px 10px 2px 0px;
     white-space: nowrap;
 }
