@@ -10,31 +10,35 @@ def each_starts_with(arr, pattern)
 	arr.each do |string|
 		#If string begins with pattern, yield to code block 
 		#and record the match
-		if(string.class == String &&
-			string.rindex(pattern, 0) != nil) then
+		if(string.class == String && string.start_with?(pattern)) then
 			yield string
 		end
 	end
 end
+
+#Test code begins
+puts "This is the test code for the starts_with method."
+puts
 
 #Test code 1
 testarr = ["abacus", "abdominal", "lab", "rehab", 3, "a", "b"]
 testpattern = "ab"
 puts "For the array: #{testarr.to_s}
 the strings starting with \"#{testpattern}\" are: "
-
-each_starts_with(testarr, testpattern) do |s|
-	puts s
-end
-
-puts ""
+each_starts_with(testarr, testpattern) { |s| puts s }
+puts
 
 #Test code 2
 testarr = ["beats", "eatery", "ate", "tea", "eating"]
 testpattern = "eat"
 puts "For the array: #{testarr.to_s}
 the strings starting with \"#{testpattern}\" are: "
+each_starts_with(testarr, testpattern) { |s| puts s }
+puts
 
-each_starts_with(testarr, testpattern) do |s|
-	puts s
-end
+#Test code 3
+testarr = ["beats", "", "eatery", "tea", "eating"]
+testpattern = ""
+puts "For the array: #{testarr.to_s}
+the strings starting with \"#{testpattern}\" are: "
+each_starts_with(testarr, testpattern) { |s| puts s }

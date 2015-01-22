@@ -29,7 +29,7 @@ def test_funny_sort(arr)
 end
 
 #Test code
-test_funny_sort(['alpha100', 'beta50', 'cedro0'])
+test_funny_sort(['alpha100', 'beta50', 'cedro0', ''])
 test_funny_sort(['app30.6le', 'cat', 'deer-100x50'])
 test_funny_sort(['-200', '20', '2thousandand50'])
 test_funny_sort(['05annoy988', '0disrupt780', '0538'])
