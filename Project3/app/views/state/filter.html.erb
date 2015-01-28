@@ -1,0 +1,12 @@
+<% @title = "Project 3, Problem 1: States" %>
+
+<!--Displays all states whose names contain the query value substring along with the substring -->
+
+<p>These states contain the substring "<%= @substr %>":</p>
+<table class="states_table" cellspacing="0">
+	<% @matching_states.each do |state| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td class="states_table_cell"><%= state %></td>
+		</tr>
+	<% end %>
+</table>
