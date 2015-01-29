@@ -1,0 +1,112 @@
+// Place all the styles related to the tab controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    /* Centers and adjusts length of the line that is
+     separating the tabs from the rest of the page */
+    margin: 7px auto;
+    width: 97%;
+}
+
+.tabset{
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+#tabs {
+
+    float: left;
+    width:100%;
+    font: 13px Tahoma;
+    
+    /* Adds line separating tabs from rest of page */
+    border-bottom: 1px solid #cccccc;
+
+}
+
+#tabs ul {
+    list-style: none;
+    margin: 0;
+
+    /* Positions tabs on the separator line */
+    padding:0px 2px;
+}
+
+#tabs ul li {
+    float:left;
+    
+    background-image: url('right.gif');
+    background-repeat: no-repeat;
+    background-position: right top;
+    
+    /* Separation between tabs */
+    margin-left: 2px;
+    margin-right: 3px;
+    padding:0;
+}
+
+#tabs ul li a {
+    display: block;
+    float:left;
+    text-decoration: none;
+    color: #000000;
+    
+    background-image: url('left.gif');
+    background-repeat:  no-repeat;
+    background-position: left top;
+    
+    /* Adds padding on sides of hyperlink area 
+     to reveal curved edges of tab */
+    padding:0px 3px;
+    margin:0px;
+}
+
+#tabs ul li a span {
+    float: left;
+    
+    background-image: url('mid.gif');
+    background-repeat: repeat-x;
+    background-position: center top;
+    
+    /* Adds padding between the tab text
+      and the edges of the tab */
+    padding:3px 5px;
+    margin:0px;
+}
+
+
+/* Formatting for selected tab */
+#tabs li#selected {
+    background-image: url('right-selected.gif');
+    background-repeat:  no-repeat;
+    background-position: right top;
+}
+
+#tabs li#selected a {
+    display:block;
+    font-weight: bold;
+    
+    background-image: url('left-selected.gif');
+    background-repeat:  no-repeat;
+    background-position: left top;
+    
+    /* Removes line underneath selected tab */
+    border-bottom-style: solid;
+    border-bottom-color: #ffffff;
+    border-bottom-width: 1px;
+    margin-bottom:-1px;
+}
+
+#tabs li#selected a span {
+    background-image: url('mid-selected.gif');
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+
+/* Change text color and mouse pointer when hover over tab */
+#tabs li a:hover {
+    color: #cc6600;
+    cursor: pointer;
+}

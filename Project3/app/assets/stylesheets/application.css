@@ -39,6 +39,7 @@ body {
 	margin-right: auto;
 	margin-bottom: 35px;
 	border: 3px solid #6E6F73;
+	display: block;
 }
 
 #footer{
@@ -46,6 +47,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0px 15px;
+	display: block;
 }
 
 #content {
@@ -55,4 +57,6 @@ body {
 	margin-right: auto;
 	margin-bottom: 20px;
   	padding: 2px 15px 10px 15px;
+  	display: block;
 }
+

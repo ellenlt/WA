@@ -6426,3 +6426,2424 @@ Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 00:17:40 -080
 
 
 Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 00:17:40 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:38:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TabsController#show2 as HTML
+Completed 500 Internal Server Error in 42ms
+
+ActionView::MissingTemplate (Missing template tabs/show2, application/show2 with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ellen/WA/Project3/app/views"
+):
+  actionview (4.1.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.7) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.7) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.7) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.7) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (4.5ms)
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:42:18 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (1.5ms)
+  Rendered tabs/show2.html.erb within layouts/application (31.3ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined method `each' for :tab_version:Symbol):
+    2: 
+    3:  <div id="tabs">
+    4:     <ul>
+    5:     <% :tab_version.each do |tab| %>
+    6:         <li <% if :label == :active_tab then%> id="selected" <% end %> >
+    7:         	<a href=<%=:url%>><span><%=:label%></span></a>
+    8:         </li>
+  app/views/tabs/_tabs.html.erb:5:in `_app_views_tabs__tabs_html_erb___3213613608471446059_70284166995760'
+  app/views/tabs/show2.html.erb:3:in `_app_views_tabs_show__html_erb__4526810150284532393_70284184212480'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.4ms)
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (1.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+
+ActionController::RoutingError (No route matches [GET] "/right.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.1ms)
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+
+ActionController::RoutingError (No route matches [GET] "/left.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.6ms)
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:46:37 -0800
+
+ActionController::RoutingError (No route matches [GET] "/mid.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.5ms)
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 21:46:38 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.7ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/right-selected.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.2ms)
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/right.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/mid-selected.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.8ms)
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/mid.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.9ms)
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/left-selected.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.8ms)
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:47:28 -0800
+
+ActionController::RoutingError (No route matches [GET] "/left.gif"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24.9ms)
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:48:29 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:49:52 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:50:47 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:50:56 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:51:03 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:51:13 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:51:19 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:36 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:49 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:51:56 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:52:04 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 65ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:52:05 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:52:19 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:52:19 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:52:19 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:52:19 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:52:20 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:52:20 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:52:20 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:52:20 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:52:20 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:52:20 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:53:17 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:53:25 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:53:32 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 21:54:03 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:54:03 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:54:03 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:54:03 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 21:54:04 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 21:54:04 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 21:54:04 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 21:54:04 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 21:54:04 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 21:54:04 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 21:54:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 21:54:29 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 21:54:29 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:00:47 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 57ms (Views: 52.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:00:47 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:00:48 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:00:48 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:00:54 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:00:54 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:00:54 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:00:54 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:02:23 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:02:24 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:02:24 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:02:24 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:02:40 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:02:41 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:02:41 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:02:41 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:04:37 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:04:37 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:04:37 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:04:37 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:04:37 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:04:45 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:04:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:04:45 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:04:45 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:04:45 -0800
+
+
+Started GET "/state/filter?substring=n" for 127.0.0.1 at 2015-01-28 22:05:23 -0800
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"n"}
+  Rendered state/filter.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:23 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:23 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:23 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:05:23 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:05:28 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:05:36 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:06:28 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:06:34 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:06:35 -0800
+
+
+Started GET "/tabs/writings" for 127.0.0.1 at 2015-01-28 22:06:58 -0800
+
+AbstractController::ActionNotFound (The action 'writings' could not be found for TabsController):
+  actionpack (4.1.7) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.7) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:07:48 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:00 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:12 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:24 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:08:36 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:09:45 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:09:52 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:09:53 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:11:25 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:12:33 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:12:34 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:13:25 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:14:23 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:14:37 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:14:50 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:55 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:55 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:14:55 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:15:51 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/show2.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:16:33 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:16:47 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:08 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:17:09 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.4ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:17:20 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.4ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:17:33 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:44 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:17:52 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:18:04 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:18:10 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:19:05 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:19:20 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:20:12 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.3ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:20:12 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:20:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:20:12 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:20:13 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:20:13 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:20:13 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:20:13 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:20:13 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:20:13 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:21 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/show2.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:34 -0800
+
+
+Started GET "/tabs/show2" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+Processing by TabsController#show2 as HTML
+  Rendered tabs/_tabs.html.erb (0.2ms)
+  Rendered tabs/_tabs.html.erb (0.1ms)
+  Rendered tabs/show2.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/mid.gif" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/left-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/mid-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/right-selected.gif" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/left.gif" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
+
+
+Started GET "/assets/right.gif" for 127.0.0.1 at 2015-01-28 22:22:58 -0800
