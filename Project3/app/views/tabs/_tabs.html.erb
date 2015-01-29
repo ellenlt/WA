@@ -1,10 +1,9 @@
  <!--Partial page template for tabs-->
-
- <div id="tabs">
+ <div class="tabs">
     <ul>
     <% tab_version.each do |tab| %>
-        <li <% if tab[:label] == active_tab then%> id="selected" <% end %> >
-        	<a href=<%=tab[:url]%>><span><%=tab[:label]%></span></a>
+        <li <% if tab[:label] == active_tab then%> class="selected" <% end %> >
+        	<a href = <%=tab[:url]%> ><span> <%=tab[:label]%> </span></a>
         </li>
     <% end %>
     </ul>

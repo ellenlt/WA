@@ -9,23 +9,25 @@ body {
     width: 97%;
 }
 
-.tabset{
+.tab_container{
     padding:10px;
-    margin-bottom: 10px;
+    display: block;
+   /* Allows div.tabset area to contain its daughter div elements
+    which are floated to the left and normally outside of the
+    document flow */
+   overflow: hidden;
 }
 
-#tabs {
-
+.tabs {
     float: left;
     width:100%;
     font: 13px Tahoma;
     
     /* Adds line separating tabs from rest of page */
     border-bottom: 1px solid #cccccc;
-
 }
 
-#tabs ul {
+.tabs ul {
     list-style: none;
     margin: 0;
 
@@ -33,7 +35,7 @@ body {
     padding:0px 2px;
 }
 
-#tabs ul li {
+.tabs ul li {
     float:left;
     
     background-image: url('right.gif');
@@ -46,7 +48,7 @@ body {
     padding:0;
 }
 
-#tabs ul li a {
+.tabs ul li a {
     display: block;
     float:left;
     text-decoration: none;
@@ -62,7 +64,7 @@ body {
     margin:0px;
 }
 
-#tabs ul li a span {
+.tabs ul li a span {
     float: left;
     
     background-image: url('mid.gif');
@@ -77,13 +79,13 @@ body {
 
 
 /* Formatting for selected tab */
-#tabs li#selected {
+.tabs li.selected {
     background-image: url('right-selected.gif');
     background-repeat:  no-repeat;
     background-position: right top;
 }
 
-#tabs li#selected a {
+.tabs li.selected a {
     display:block;
     font-weight: bold;
     
@@ -98,7 +100,7 @@ body {
     margin-bottom:-1px;
 }
 
-#tabs li#selected a span {
+.tabs li.selected a span {
     background-image: url('mid-selected.gif');
     background-repeat: repeat-x;
     background-position: center top;
@@ -106,7 +108,7 @@ body {
 
 
 /* Change text color and mouse pointer when hover over tab */
-#tabs li a:hover {
+.tabs li a:hover {
     color: #cc6600;
     cursor: pointer;
 }

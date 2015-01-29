@@ -1,4 +1,4 @@
 <% @title = "Project 3, Problem 3 - Tabs" %>
 
-<div class = "tabset"><%= render(:partial=>"tabs", :locals=> {:tab_version=>@tabs_v1, :active_tab=>@active_tab1}) %></div>
-<div class = "tabset"><%= render(:partial=>"tabs", :locals=> {:tab_version=>@tabs_v2, :active_tab=>@active_tab2}) %></div>
+<div class = "tab_container"><%= render(:partial=>"tabs", :locals=> {:tab_version=>@tabs_v1, :active_tab=>@active_tab1}) %></div>
+<div class = "tab_container"><%= render(:partial=>"tabs", :locals=> {:tab_version=>@tabs_v2, :active_tab=>@active_tab2}) %></div>
