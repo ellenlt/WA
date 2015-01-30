@@ -3,7 +3,7 @@
     <ul>
     <% tab_version.each do |tab| %>
         <li <% if tab[:label] == active_tab then%> class="selected" <% end %> >
-        	<a href = <%=tab[:url]%> ><span> <%=tab[:label]%> </span></a>
+        	<a href = "<%=tab[:url]%>" ><span> <%=tab[:label]%> </span></a>
         </li>
     <% end %>
     </ul>
