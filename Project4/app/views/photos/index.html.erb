@@ -1,0 +1,31 @@
+<% @title = @user.full_name + "'s Photos" %>
+<!-- photos/index/id displays all of the photos belonging to a particular user.
+  	 For each photo you must display the photo itself, the creation time for the photo, 
+  	 and all of the comments for that photo. For each comment you must display 
+  	 time when the comment was created, the name of the user who created the comment, 
+  	 and the text of the comment. The creator for each comment should be a link 
+  	 that can be clicked to switch to the photos page for that user.-->
+<h1><%= @user.full_name + "'s Photos" %></h1>
+	<ul class="photos_grid">
+	<% for photo in @user.photos do %>
+		<li class="photo">
+			<a class = "photo_container" href = "<%= @user.id %>/<%= photo.file_name %>"
+			style="background-image: url(/assets/<%=photo.file_name%>)">
+				<span class = "overlay" style="background-image: url(/assets/<%=photo.file_name%>)>
+					<span class = "photo_info">
+					<%= photo.date_time %><br/>
+					<%= photo.num_comments %>
+					<% if (photo.num_comments!=1) then %>comments:<% else %>comment:<% end %>
+						<ul class = "photo_comments">
+						<% for comment in photo.comments do %>
+							<li class="comment">
+								On <%= comment.date_time %> <%= comment.user_id %> said: <%= comment.comment %>
+							</li>
+						<% end %>
+						</ul>
+					</span>
+				</span>
+			</a>
+		</li>
+	<% end %>
+	</ul>

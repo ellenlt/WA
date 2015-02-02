@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+	background-image: url(/assets/swirl_pattern.png);
+	background-attachment: fixed;
+	margin:0;
+	padding:0;
+}
+
+#page_container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+}
+
+.foreground {
+	/* Sets transparency of content box but not text */
+    background-color:rgba(250,250,250,0.7);
+}
+
+#header_container {
+	padding: 35px 0;
+}
+
+#logo {
+	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+	color: #505050;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #6E6F73;
+	display: block;
+}
+
+#footer_container {
+	padding: 15px 0;
+}
+
+#footer{
+	padding: 5px 15px;
+	display: block;
+}
+
+#content {
+  	font-size: 15px;
+  	padding: 15px;
+  	display: block;
+}
+
