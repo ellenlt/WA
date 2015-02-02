@@ -7,7 +7,5 @@ class PhotosController < ApplicationController
   	# and the text of the comment. The creator for each comment should be a link 
   	# that can be clicked to switch to the photos page for that user.
   	@user = User.find_by_id(params[:id])
-  	@photos = Photo.all()
-  	@comments = Comment.all()
   end
 end

@@ -6,26 +6,22 @@
   	 and the text of the comment. The creator for each comment should be a link 
   	 that can be clicked to switch to the photos page for that user.-->
 <h1><%= @user.full_name + "'s Photos" %></h1>
-	<ul class="photos_grid">
+	<div id="photos_table">
 	<% for photo in @user.photos do %>
-		<li class="photo">
-			<a class = "photo_container" href = "<%= @user.id %>/<%= photo.file_name %>"
-			style="background-image: url(/assets/<%=photo.file_name%>)">
-				<span class = "overlay" style="background-image: url(/assets/<%=photo.file_name%>)>
-					<span class = "photo_info">
-					<%= photo.date_time %><br/>
-					<%= photo.num_comments %>
-					<% if (photo.num_comments!=1) then %>comments:<% else %>comment:<% end %>
-						<ul class = "photo_comments">
-						<% for comment in photo.comments do %>
-							<li class="comment">
-								On <%= comment.date_time %> <%= comment.user_id %> said: <%= comment.comment %>
-							</li>
-						<% end %>
-						</ul>
-					</span>
-				</span>
-			</a>
-		</li>
+		<div class="photo">
+			<div class="photo_column"><img class="photo_container" src="/assets/<%=photo.file_name%>" alt="<%=photo.file_name%>"/></div>
+
+			<div class="info_column">
+					<span class="detail">Taken <%= photo.date_time.strftime("%_k:%M%P on %b %-d %Y") %> | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %></span>
+				<% if photo.num_comments>0 then %>
+				<ul class="comments">
+					<% for comment in photo.comments do %>
+					<li class="<%= cycle('odd', 'even') %>"><a class="user_link" href="<%= comment.user_id %>"><b><%= (comment.user.full_name) %>:</b></a> <%= comment.comment %><div class="detail"><%= comment.date_time.strftime("%B %-d %Y, at %-I:%M%P") %></div></li>
+					<% puts comment.date_time.to_s %>
+					<% end %>
+				</ul>
+				<% end %>
+			</div>
+		</div>
 	<% end %>
-	</ul>
+	</div>
