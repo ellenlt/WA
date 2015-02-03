@@ -15,6 +15,7 @@ class Adder
 			self.class.class_eval do
 				define_method(method) {@num + $1.to_i}	
 			end
+			eval method.to_s
 		else
 			super
 		end
