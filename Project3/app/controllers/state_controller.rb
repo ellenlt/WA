@@ -7,9 +7,6 @@ class StateController < ApplicationController
 			# Lists the query value "substring"
 			@substr = params[:substring]
 			@matching_states = State.filter(@substr)
-			if (@matching_states.empty?) then
-				@matching_states = ["No matching states"]
-			end
 		end
 	end
 end

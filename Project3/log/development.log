@@ -12726,3 +12726,279 @@ ActionController::RoutingError (No route matches [GET] "/photos/index/4/obama1.j
   Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
   Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.5ms)
   Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.8ms)
+
+
+Started GET "/state/filter?substring=al" for 127.0.0.1 at 2015-02-06 00:21:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"al"}
+  Rendered state/filter.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 71ms (Views: 57.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:21:06 -0500
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:21:06 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:21:06 -0500
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-02-06 00:21:06 -0500
+
+
+Started GET "/state/filter?substring=" for 127.0.0.1 at 2015-02-06 00:21:09 -0500
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>""}
+  Rendered state/filter.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/state/filter?substring" for 127.0.0.1 at 2015-02-06 00:21:13 -0500
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>nil}
+  Rendered state/filter.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: 
+    5: <p>These states contain the substring "<%= @substr %>":</p>
+    6: <table class="states_table" cellspacing="0">
+    7: 	<% @matching_states.each do |state| %>
+    8: 		<tr class="<%= cycle('odd', 'even') %>">
+    9: 			<td class="states_table_cell"><%= state %></td>
+   10: 		</tr>
+  app/views/state/filter.html.erb:7:in `_app_views_state_filter_html_erb__799345501576371013_70150049730940'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:22:18 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: 
+    5: <p>These states contain the substring "<%= @substr %>":</p>
+    6: <table class="states_table" cellspacing="0">
+    7: 	<% @matching_states.each do |state| %>
+    8: 		<tr class="<%= cycle('odd', 'even') %>">
+    9: 			<td class="states_table_cell"><%= state %></td>
+   10: 		</tr>
+  app/views/state/filter.html.erb:7:in `_app_views_state_filter_html_erb__799345501576371013_70150049730940'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:23:38 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:38 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:38 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:38 -0500
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:23:48 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:48 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:48 -0500
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:23:58 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:58 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:58 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:23:58 -0500
+
+
+Started GET "/state/filter?substring=" for 127.0.0.1 at 2015-02-06 00:24:09 -0500
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>""}
+  Rendered state/filter.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:09 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:09 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:09 -0500
+
+
+Started GET "/state/filter?substring=" for 127.0.0.1 at 2015-02-06 00:24:35 -0500
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>""}
+  Rendered state/filter.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:36 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:36 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:36 -0500
+
+
+Started GET "/state/filter?substring=zs" for 127.0.0.1 at 2015-02-06 00:24:39 -0500
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"zs"}
+  Rendered state/filter.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:40 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:40 -0500
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:40 -0500
+
+
+Started GET "/state/filter?substring=zs" for 127.0.0.1 at 2015-02-06 00:24:54 -0500
+Processing by StateController#filter as HTML
+  Parameters: {"substring"=>"zs"}
+  Rendered state/filter.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:54 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:54 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:24:54 -0500
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:25:00 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    2: 
+    3: <!--Displays all states whose names contain the query value substring along with the substring -->
+    4: 
+    5: <% if !@matching_states.empty? %>
+    6: 	<p>These states contain the substring "<%= @substr %>":</p>
+    7: 	<table class="states_table" cellspacing="0">
+    8: 		<% @matching_states.each do |state| %>
+  app/views/state/filter.html.erb:5:in `_app_views_state_filter_html_erb__799345501576371013_70150004086040'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:25:14 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/ellen/WA/Project3/app/views/state/filter.html.erb:5: `@@ ' is not allowed as a class variable name
+/Users/ellen/WA/Project3/app/views/state/filter.html.erb:5: syntax error, unexpected end-of-input, expecting keyword_then or ';' or '\n'
+'.freeze; if !@matching_states.empty? @@ @matching_states 
+                                        ^):
+  app/views/state/filter.html.erb:5: `@@ ' is not allowed as a class variable name
+  app/views/state/filter.html.erb:5: syntax error, unexpected end-of-input, expecting keyword_then or ';' or '\n'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.6ms)
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:25:22 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    2: 
+    3: <!--Displays all states whose names contain the query value substring along with the substring -->
+    4: 
+    5: <% if !@matching_states.empty? and @matching_states %>
+    6: 	<p>These states contain the substring "<%= @substr %>":</p>
+    7: 	<table class="states_table" cellspacing="0">
+    8: 		<% @matching_states.each do |state| %>
+  app/views/state/filter.html.erb:5:in `_app_views_state_filter_html_erb__799345501576371013_70150038563460'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.0ms)
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:25:42 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    2: 
+    3: <!--Displays all states whose names contain the query value substring along with the substring -->
+    4: 
+    5: <% if !@matching_states.empty? and @matching_states != nil %>
+    6: 	<p>These states contain the substring "<%= @substr %>":</p>
+    7: 	<table class="states_table" cellspacing="0">
+    8: 		<% @matching_states.each do |state| %>
+  app/views/state/filter.html.erb:5:in `_app_views_state_filter_html_erb__799345501576371013_70150006971900'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/state/filter" for 127.0.0.1 at 2015-02-06 00:26:07 -0500
+Processing by StateController#filter as HTML
+  Rendered state/filter.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/state.css?body=1" for 127.0.0.1 at 2015-02-06 00:26:07 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-06 00:26:07 -0500
+
+
+Started GET "/assets/tabs.css?body=1" for 127.0.0.1 at 2015-02-06 00:26:07 -0500
