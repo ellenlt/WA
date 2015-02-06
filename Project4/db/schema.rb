@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131220805) do
+ActiveRecord::Schema.define(version: 20150203212730) do
 
   create_table "comments", force: true do |t|
     t.integer  "photo_id"
     t.integer  "user_id"
-    t.date     "date_time"
+    t.datetime "date_time"
     t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150131220805) do
 
   create_table "photos", force: true do |t|
     t.integer  "user_id"
-    t.date     "date_time"
+    t.datetime "date_time"
     t.string   "file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
