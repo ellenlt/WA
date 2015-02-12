@@ -1,0 +1,145 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+	background-image: url(/assets/swirl_pattern.png);
+	background-attachment: fixed;
+	margin:0;
+	padding:0;
+ 	color: #505050;
+}
+
+/* Link formatting */
+a, a:visited {
+	text-decoration: none;
+    color: #EB577E;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* Centers contents of page in single column */
+#page_container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+}
+
+/* Places contents of page on a transparent box */
+.foreground {
+	/* Sets transparency of content box but not text */
+    background-color:rgba(250,250,250,0.7);
+}
+
+/* Header */
+#header_container {
+	padding: 35px 0;
+}
+#logo {
+	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #6E6F73;
+	display: block;
+}
+
+/* Contents of the page, yields to whatever page is displayed */
+#content {
+  	font-size: 15px;
+  	padding: 15px 40px 30px 40px;
+  	display: block;
+}
+
+/* Footer */
+#footer_container {
+	padding: 15px 0;
+}
+#footer{
+	padding: 5px 15px;
+	display: block;
+}
+
+/* Navigation bar */
+
+#navbar_container {
+	padding: 15px 0;
+}
+#navbar {
+  	font-size: 15px;
+  	color: #EB577E;
+  	padding: 15px 40px;
+  	display: block;
+  	font-weight: bold;
+  	font-size: 18px;
+}
+#navbar .navlink {
+	margin: 0 5px;
+}
+.login_logout, .welcome {
+	float:right;
+}
+
+/* Displays messages such as error message for user */
+#message_box {
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 20px;
+}
+.message_icon {
+	background-repeat: no-repeat;
+	width:100px;
+	max-height:100%;
+	margin-right: 10px;
+	float:left;
+}
+
+/* Form formatting */
+.form_items {
+	list-style: none;
+	padding:0;
+}
+
+.form_items li {
+	margin: 10px 0px;
+	padding: 0;
+}
+
+.form_button {
+	font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+	background-color: #EF7998;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    border:none;
+    cursor: pointer;
+}
+
+.form_field {
+	font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+	margin: 0px 5px;
+}
+
+.form_label {
+	font-size: 18px;
+	font-weight: bold;
+}

@@ -1,0 +1,9 @@
+<div id = "message_box">
+	<span class = "message <%= message_class %>"><%= message %></span>
+
+	<% if message_class == "success" then %>
+	<img class="message_icon" src="/assets/happy_cat.jpg" alt="Success!" />
+	<% elsif message_class == "error" then %>
+	<img class="message_icon" src="/assets/grumpy_cat.jpg" alt="Error" />
+	<% end %>
+</div>

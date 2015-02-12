@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id = "page_container">
+		<div id = "header_container">
+			<div id = "logo" class = "foreground">
+				<h1>Ellen Tsay</h1>
+			</div>
+		</div>
+		<div id = "navbar_container">
+			<div id = "navbar" class = "foreground">
+				<a class = "navlink" href = "/users/index">People</a>
+				<% if logged_in? then %>
+					<!-- Display logout link -->
+					<a class = "navlink login_logout" href = "/users/logout">Logout</a>
+					<span class = "navlink welcome">Hi <%=current_user_first_name%>!</span>
+				<% else %>
+					<!-- Display login link -->
+					<a class = "login_logout" href = "/users/login">Login</a>
+				<% end %>
+			</div>
+		</div>
+		<div id = "content" class = "foreground">
+			<!-- Displays any messages for user -->
+			<% if flash[:success] %>
+				<%= render(:partial=>"shared/message", :locals=> {:message_class => "success", :message => flash[:success]}) %>
+			<% end %>
+			<% if flash[:error] %>
+				<%= render(:partial=>"shared/message", :locals=> {:message_class => "error", :message => flash[:error]}) %>
+			<% end %>
+			
+			<%= yield %>
+		</div>
+		<div id = "footer_container">
+			<div id = "footer" class = "foreground">
+				<span> ©2015 Ellen Tsay | CS 142 | Stanford University </span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

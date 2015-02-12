@@ -1,0 +1,21 @@
+<!-- Displays comments form where user can add a comment for the photo whose primary key is "id" -->
+<% if @photo then %>
+	<% @title = "Make Comment" %>
+	
+	<% if @comment and @comment.errors.any? %>
+		<% @comment.errors.messages.each do |msg| %>
+			<p><%= msg %></p>
+		<% end %>
+	<% end %>
+	<%= form_tag({:controller => "comments", :action => "create", :id => params[:id]}, :class => "comments_box") do %>
+	    <h2>Make a comment:</h2>
+	    <ul class = "form_items">
+		    <li><%= text_area_tag(:comment, nil, :class => "form_field comment_field") %></li>
+		    <li><%= submit_tag("Post", :class => "form_button comment_button") %></li>
+	    	<li><img class = "photo_for_comments" src="/assets/<%= @photo.file_name %>"/></li>
+	    </ul>
+	<% end %>
+<% else %>
+	<% @title = "Page Not Found" %>
+	<h1>Oh no! That photo does not exist! :(</h1>
+<% end %>
