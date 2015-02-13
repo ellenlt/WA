@@ -1,0 +1,13 @@
+<!-- Displays form where user can upload a new photo -->
+
+<% @title = "Upload Photo" %>
+
+<%= form_for(@photo, :url => {:action => :create}, :html=>{:class=> "comments_box"}) do |f| %>
+    <h2>Select photo to upload:</h2>
+    <ul class = "form_items">
+    	<li><%= f.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
+	    <li><%= f.hidden_field(:date_time, :value => DateTime.now) %></li>
+    	<li><%= f.file_field(:photo, :class => "form_field login_field") %></li>
+	    <li><%= f.submit("Upload", :class => "form_button comment_button") %></li>
+    </ul>
+<% end %>

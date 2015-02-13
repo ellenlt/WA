@@ -51,11 +51,22 @@ class UsersController < ApplicationController
 
  	# New user registration form
   	def new
-  		@user = User.new()
+      if logged_in?
+        flash[:error] = "Logout before creating an account!"
+        redirect_to(:controller => :photos, :action => :index, :id => session[:current_user_id])
+      else
+    		@user = User.new()
+      end
   	end
 
   	# Registers new user
   	def create
+      if logged_in?
+        flash[:error] = "Logout before creating an account!"
+        redirect_to(:controller => :photos, :action => :index, :id => session[:current_user_id])
+        return
+      end
+
   		new_user = User.new(user_params(params[:user]))
 
   		# Create new user and redirect to login page

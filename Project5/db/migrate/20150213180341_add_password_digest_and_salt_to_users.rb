@@ -1,4 +1,4 @@
-class AddPasswordToUsers < ActiveRecord::Migration
+class AddPasswordDigestAndSaltToUsers < ActiveRecord::Migration
   def change
   	add_column :users, :password_digest, :string
   	add_column :users, :salt, :string
@@ -7,10 +7,8 @@ class AddPasswordToUsers < ActiveRecord::Migration
 
   	#Initializes each user's salt to a random number and password to their login
   	User.all.each do |user|
-  		user.salt = Random.rand.to_s
-  		user.password_digest = Digest::SHA1.hexdigest(user.login + user.salt)
-  		user.save
+  		user.password = user.login
+  		user.save(:validate => false)
   	end
-
   end
 end

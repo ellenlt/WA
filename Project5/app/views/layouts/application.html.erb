@@ -16,15 +16,24 @@
 		</div>
 		<div id = "navbar_container">
 			<div id = "navbar" class = "foreground">
-				<a class = "navlink" href = "/users/index">People</a>
+				<!-- Link to all users page -->
+				<a class = "navitem" href = "/users/index">People</a>
+
+				<!-- Display photo upload link for logged in users -->
 				<% if logged_in? then %>
-					<!-- Display logout link -->
-					<a class = "navlink login_logout" href = "/users/logout">Logout</a>
-					<span class = "navlink welcome">Hi <%=current_user_first_name%>!</span>
+					<a class = "navitem" href = "/photos/new">Upload Photo</a>
 				<% else %>
-					<!-- Display login link -->
+					<span class = "navitem">Upload Photo</span>
+				<% end %>
+
+				<!-- Displays login/logout link and welcome message -->
+				<% if logged_in? then %>
+					<a class = "navitem login_logout" href = "/users/logout">Logout</a>
+					<span class = "navitem welcome">Hi <%=current_user_first_name%>!</span>
+				<% else %>
 					<a class = "login_logout" href = "/users/login">Login</a>
 				<% end %>
+
 			</div>
 		</div>
 		<div id = "content" class = "foreground">

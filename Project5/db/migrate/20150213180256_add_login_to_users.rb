@@ -7,7 +7,7 @@ class AddLoginToUsers < ActiveRecord::Migration
       #Sets each user's login to their last name, in lowercase
 	  User.all.each do |user|
 	  	user.login = user.last_name.downcase
-	  	user.save
+	  	user.save(:validate => false)
 	  end
 	  
   end

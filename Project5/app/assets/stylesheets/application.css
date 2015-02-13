@@ -89,8 +89,8 @@ a:hover {
   	font-weight: bold;
   	font-size: 18px;
 }
-#navbar .navlink {
-	margin: 0 5px;
+#navbar .navitem {
+	margin: 0 10px;
 }
 .login_logout, .welcome {
 	float:right;

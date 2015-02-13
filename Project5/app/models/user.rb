@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   # Saves typed password as a virtual attribute
   def password=(password)
   		self.salt = Random.rand.to_s
-  		self.password_digest = Digest::SHA1.hexdigest(password + salt)
+  		self.password_digest = Digest::SHA1.hexdigest(password + self.salt)
       
       self.password_virtual_attr = password
   end
