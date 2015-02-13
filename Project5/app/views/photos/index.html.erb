@@ -19,7 +19,7 @@
 
 				<div class="info_column">
 					<!-- display date/time photo was taken and number of comments -->				
-					<span class="detail"><%= photo.date_time.strftime("%B %-d, %Y at %l:%M %p") %> | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %></span>
+					<span class="detail"><%= photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %> | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %></span>
 
 					<ul class="comments">
 					<!-- display comments on the photo -->

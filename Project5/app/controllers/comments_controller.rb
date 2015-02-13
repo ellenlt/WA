@@ -11,8 +11,8 @@ class CommentsController < ApplicationController
   	if @comment.save
 	  	redirect_to(:controller => :photos, :action => :index, :id => @comment.photo.user_id)
 	else
-		flash[:error] = @comment.errors.full_messages.first
-		redirect_to(:action => :new, :id => @comment.photo.id)
+		  flash[:error] = @comment.errors.full_messages.first
+		  redirect_to(:action => :new, :id => @comment.photo.id)
 	end
   end
 

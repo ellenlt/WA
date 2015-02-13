@@ -3,14 +3,14 @@
 <% if @photo then %>
 	<% @title = "Make Comment" %>
 
-	<%= form_for(@comment, url: {:action => :create, :id => @photo.id}, :html=>{:class=> "comments_box"}) do |form| %>
+	<%= form_for(@comment, url: {:action => :create, :id => @photo.id}, :html=>{:class=> "comments_box"}) do |f| %>
 	    <h2>Make a comment:</h2>
 	    <ul class = "form_items">
-		    <li><%= form.text_area(:comment, :class => "form_field comment_field") %></li>
-		    <li><%= form.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
-		    <li><%= form.hidden_field(:photo_id, :value => @photo.id) %></li>
-		    <li><%= form.hidden_field(:date_time, :value => Time.now) %></li>
-		    <li><%= form.submit("Post", :class => "form_button comment_button") %></li>
+		    <li><%= f.text_area(:comment, :class => "form_field comment_field") %></li>
+		    <li><%= f.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
+		    <li><%= f.hidden_field(:photo_id, :value => @photo.id) %></li>
+		    <li><%= f.hidden_field(:date_time, :value => DateTime.now) %></li>
+		    <li><%= f.submit("Post", :class => "form_button comment_button") %></li>
 	    	<li><img class = "photo_for_comments" src="/assets/<%= @photo.file_name %>"/></li>
 	    </ul>
 	<% end %>

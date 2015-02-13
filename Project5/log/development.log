@@ -48358,3 +48358,3236 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-12 22:14:5
 
 
 Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-12 22:14:50 -0800
+
+
+Started GET "/users/index" for 127.0.0.1 at 2015-02-12 23:05:21 -0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.7) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordToUsers (20150213065633)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "salt" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordToUsers (20150213065633)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "salt" varchar(255)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["password_digest", "bfcfa3e146bb7597e8b4d2a19ac97715d360a17c"], ["salt", "0.526825109119908"], ["updated_at", "2015-02-13 07:51:40.668077"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["password_digest", "5c1dd73fb4bcb990e87954456d198444ba9d88ee"], ["salt", "0.3161212287262679"], ["updated_at", "2015-02-13 07:51:40.681899"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 3  [["password_digest", "99023035b4e6f3a69b9de9ca9f49e1022b91d3a5"], ["salt", "0.24057742860893272"], ["updated_at", "2015-02-13 07:51:40.683703"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 4[0m  [["password_digest", "6fdef8781c0aeb300bfde5f43a3b1879bfde9067"], ["salt", "0.5333160336838297"], ["updated_at", "2015-02-13 07:51:40.685258"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 5  [["password_digest", "9400f5580a74b01bfb65abd069b20ccc43d1cd17"], ["salt", "0.7767947144966119"], ["updated_at", "2015-02-13 07:51:40.686434"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 6[0m  [["password_digest", "710d5a2c50309d14f46d1d0a9d3e517b838857ed"], ["salt", "0.24095413076276506"], ["updated_at", "2015-02-13 07:51:40.687434"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150213065633"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_updated_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_updated_at' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+
+
+
+Started GET "/users/index" for 127.0.0.1 at 2015-02-13 07:02:49 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 101ms (Views: 74.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:49 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:49 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:49 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:49 -0800
+
+
+Started GET "/assets/swirl_pattern.png" for 127.0.0.1 at 2015-02-13 07:02:49 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:02:53 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:53 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:53 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:53 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:02:53 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:03:57 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:03:58 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:03:58 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:03:58 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:03:58 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:10:44 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CTV971yOra5cBLwu6vQbJeUZd590vUltfYZGUAJVxA=", "login"=>"bieber", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'bieber' LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `password_valid' for #<UsersController:0x007fb296412ff8>):
+  app/controllers/users_controller.rb:39:in `post_login'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:11:25 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CTV971yOra5cBLwu6vQbJeUZd590vUltfYZGUAJVxA=", "login"=>"bieber", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'bieber' LIMIT 1
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `password_valid?' for #<UsersController:0x007fb29534d6c8>):
+  app/controllers/users_controller.rb:39:in `post_login'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.5ms)
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:11:36 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CTV971yOra5cBLwu6vQbJeUZd590vUltfYZGUAJVxA=", "login"=>"bieber", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'bieber' LIMIT 1[0m
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:11:36 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.2ms)
+  Rendered shared/_message.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:11:37 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:11:37 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:11:37 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:11:37 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:11:37 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CTV971yOra5cBLwu6vQbJeUZd590vUltfYZGUAJVxA=", "login"=>"bieber", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'bieber' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/photos/index?id=1
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/photos/index?id=1" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  Rendered photos/index.html.erb within layouts/application (117.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 148ms (Views: 143.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started GET "/assets/bieber1.jpg" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started GET "/assets/bieber2.jpg" for 127.0.0.1 at 2015-02-13 07:12:03 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CTV971yOra5cBLwu6vQbJeUZd590vUltfYZGUAJVxA=", "login"=>"biebs", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/photos/index?id=1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/photos/index?id=1" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 3]]
+  Rendered photos/index.html.erb within layouts/application (9.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started GET "/assets/bieber1.jpg" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started GET "/assets/bieber2.jpg" for 127.0.0.1 at 2015-02-13 07:13:04 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CTV971yOra5cBLwu6vQbJeUZd590vUltfYZGUAJVxA=", "login"=>"", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/photos/index?id=1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/photos/index?id=1" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  Rendered photos/index.html.erb within layouts/application (10.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/assets/bieber1.jpg" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/assets/bieber2.jpg" for 127.0.0.1 at 2015-02-13 07:13:17 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+Processing by UsersController#login as HTML
+Redirected to http://localhost:3000/photos/index?id=1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/photos/index?id=1" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 3]]
+  Rendered photos/index.html.erb within layouts/application (10.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+
+
+Started GET "/assets/bieber1.jpg" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+
+
+Started GET "/assets/bieber2.jpg" for 127.0.0.1 at 2015-02-13 07:13:29 -0800
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:31 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "login"=>"biebs", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'biebs' LIMIT 1
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.3ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:36 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "login"=>"biebs", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'biebs' LIMIT 1[0m
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:44 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "login"=>"bieber", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'bieber' LIMIT 1
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.2ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:13:49 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:16:35 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:16:35 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:16:35 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:16:35 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:16:35 -0800
+
+
+Started GET "/new" for 127.0.0.1 at 2015-02-13 07:16:39 -0800
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2015-02-13 07:16:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (17.9ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2015-02-13 07:17:02 -0800
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.4ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2015-02-13 07:17:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.3ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2015-02-13 07:17:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2015-02-13 07:18:26 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:26 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:26 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:26 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:26 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:18:28 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:28 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:28 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:28 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:18:28 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:18:31 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    24: 
+    25: 
+    26: 
+    27: <%= form_for(@user, url: {:action => :create}, :html=>{:class=> "login_box"}) do |form| %>
+    28:     <ul class = "form_items">
+    29: 	    <li><%= form.text_area(:comment, :class => "form_field comment_field") %></li>
+    30: 	    <li><%= form.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
+  app/views/users/new.html.erb:27:in `_app_views_users_new_html_erb___1917437063007873558_70202500339700'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:19:04 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    24: 
+    25: 
+    26: =begin
+    27: <%= form_for(@user, url: {:action => :create}, :html=>{:class=> "login_box"}) do |form| %>
+    28:     <ul class = "form_items">
+    29: 	    <li><%= form.text_area(:comment, :class => "form_field comment_field") %></li>
+    30: 	    <li><%= form.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
+  app/views/users/new.html.erb:27:in `_app_views_users_new_html_erb___1917437063007873558_70202491631240'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:19:23 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    21: 	</ul>
+    22: <% end %>
+    23: <!---=begin
+    24: <%= form_for(@user, url: {:action => :create}, :html=>{:class=> "login_box"}) do |form| %>
+    25:     <ul class = "form_items">
+    26: 	    <li><%= form.text_area(:comment, :class => "form_field comment_field") %></li>
+    27: 	    <li><%= form.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
+  app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___1917437063007873558_70202464987020'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:19:31 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:19:31 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:19:31 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:19:31 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:19:31 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:20:01 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]", "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 3ms
+
+ActionView::MissingTemplate (Missing template users/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ellen/WA/Project5/app/views"
+):
+  actionview (4.1.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.7) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.7) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.7) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.7) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:23:44 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:44 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:44 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:44 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "login"=>"clasu", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'clasu' LIMIT 1
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.9ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:23:53 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "login"=>"claus", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'claus' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1
+Redirected to http://localhost:3000/photos/index?id=5
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/photos/index?id=5" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?  [["user_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 11]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered photos/index.html.erb within layouts/application (5.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+
+
+Started GET "/assets/santa1.jpg" for 127.0.0.1 at 2015-02-13 07:23:58 -0800
+
+
+Started GET "/comments/new/11" for 127.0.0.1 at 2015-02-13 07:24:01 -0800
+Processing by CommentsController#new as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered comments/new.html.erb within layouts/application (8.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:02 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:02 -0800
+
+
+Started GET "/assets/santa1.jpg" for 127.0.0.1 at 2015-02-13 07:24:02 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:02 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:02 -0800
+
+
+Started POST "/comments/create/11" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGh80jHdoFZXIoUhqi14tPOHtQEmLQ0OU0o6nbXPqlw=", "comment"=>{"comment"=>"test", "user_id"=>"5", "photo_id"=>"11", "date_time"=>"2015-02-13T07:24:01-08:00"}, "commit"=>"Post", "id"=>"11"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "test"], ["created_at", "2015-02-13 15:24:04.714364"], ["date_time", "2015-02-13 15:24:01.000000"], ["photo_id", 11], ["updated_at", "2015-02-13 15:24:04.714364"], ["user_id", 5]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 11]]
+Redirected to http://localhost:3000/photos/index?id=5
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/photos/index?id=5" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?  [["user_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 11]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered photos/index.html.erb within layouts/application (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 5 LIMIT 1[0m
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+
+
+Started GET "/assets/santa1.jpg" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:24:04 -0800
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.9ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:28:42 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:28:45 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <% @title = "Sign Up" %>
+    4: 
+    5: <%= form_for(@user, :url => {:controller => :users, :action => :create}, :http => {:class => "login_box"}) do |f| %>
+    6:     <h2>Create your account:</h2>
+    7:     <ul class = "form_items">
+    8: 	    <li>
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___1917437063007873558_70202464842500'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:29:02 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 53ms (Views: 44.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:29:02 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:29:02 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:29:02 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:29:02 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:29:17 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `password2' for #<User:0x007fb2955ee210>):
+    15: 		</li>
+    16: 		<li>
+    17: 	    	<%= f.label(:password2, "Re-enter password", :class => "form_label") %>
+    18: 	    	<%= f.text_field(:password2, :class => "form_field login_field") %>
+    19: 		</li>
+    20: 	    <li><%= submit("Sign Up", :class => "form_button login_button") %></li>
+    21: 	</ul>
+  app/views/users/new.html.erb:18:in `block in _app_views_users_new_html_erb___1917437063007873558_70202493460580'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___1917437063007873558_70202493460580'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:30:29 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x007fb2953a6cf0>:0x007fb2953a62f0>):
+    17: 	    	<%= f.label(:password2, "Re-enter password", :class => "form_label") %>
+    18: 	    	<%= f.text_field(:password2, :class => "form_field login_field") %>
+    19: 		</li>
+    20: 	    <li><%= submit("Sign Up", :class => "form_button login_button") %></li>
+    21: 	</ul>
+    22: <% end %>
+  app/views/users/new.html.erb:20:in `block in _app_views_users_new_html_erb___1917437063007873558_70202493460580'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___1917437063007873558_70202493460580'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:30:50 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:30:50 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:30:50 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:30:50 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:30:50 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:34:54 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:34:54 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:34:54 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:34:54 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:34:54 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:35:12 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:35:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:35:12 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:35:12 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:35:12 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:45:50 -0800
+
+SyntaxError (/Users/ellen/WA/Project5/app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  		if User.where(":login = new_user.login")
+  		  ^
+/Users/ellen/WA/Project5/app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:46:01 -0800
+
+SyntaxError (/Users/ellen/WA/Project5/app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  		if User.where("user.login = new_user.login")
+  		  ^
+/Users/ellen/WA/Project5/app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:46:13 -0800
+
+SyntaxError (/Users/ellen/WA/Project5/app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  		if User.where(user.login = new_user.login)
+  		  ^
+/Users/ellen/WA/Project5/app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:46:18 -0800
+
+SyntaxError (/Users/ellen/WA/Project5/app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  		if User.where(login = new_user.login)
+  		  ^
+/Users/ellen/WA/Project5/app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:47:47 -0800
+
+SyntaxError (/Users/ellen/WA/Project5/app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  		if User.find_or_create_by(login: new_user.login)
+  		  ^
+/Users/ellen/WA/Project5/app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:61: syntax error, unexpected keyword_if, expecting ')'
+  app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:47:59 -0800
+
+SyntaxError (/Users/ellen/WA/Project5/app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:82: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:48:12 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 54ms (Views: 44.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:12 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:12 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:12 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:12 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'bieber' LIMIT 1
+Redirected to http://localhost:3000/users/new
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 302 Found in 20ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered shared/_message.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:48:45 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:49:04 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:49:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:49:15 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:16 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:16 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:16 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:49:16 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:49:16 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:50:43 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:43 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:43 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:43 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:43 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 302 Found in 12ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 07:50:53 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 07:51:44 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 07:51:44 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 07:51:44 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 07:51:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 07:51:44 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:51:50 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 7ms
+
+ActionView::MissingTemplate (Missing template users/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ellen/WA/Project5/app/views"
+):
+  actionview (4.1.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.7) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.7) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.7) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.7) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.6ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 07:52:00 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 16ms
+
+ActionView::MissingTemplate (Missing template users/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ellen/WA/Project5/app/views"
+):
+  actionview (4.1.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.7) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.7) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.7) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.7) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.7) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.7) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.7) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.7) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.7) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.7) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/ellen/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:40:13 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 40ms (Views: 33.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:40:13 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:40:13 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:40:13 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:40:13 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:40:21 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 34ms
+
+NoMethodError (undefined method `errors' for nil:NilClass):
+  app/controllers/users_controller.rb:65:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:40:56 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `errors' for nil:NilClass):
+  app/controllers/users_controller.rb:65:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:41:10 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `all' for #<Array:0x007fb29619b9a0>):
+  app/controllers/users_controller.rb:65:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 19ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:41:58 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"ELlen", "last_name"=>"Tsay", "login"=>"", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 20ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:43:32 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 18ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:46:05 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:46:16 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 38ms (Views: 30.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:16 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:16 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:16 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:16 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:46:22 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:46:59 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <% @title = "Sign Up" %>
+    4: 
+    5: <%= form_for(@user, :url => {:controller => :users, :action => :create}, :http => {:class => "login_box"}) do |f| %>
+    6:     <h2>Create your account:</h2>
+    7:     <ul class = "form_items">
+    8: 	    <li>
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___1917437063007873558_70202500929120'
+  app/controllers/users_controller.rb:68:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.9ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:47:28 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 18ms
+
+ActionView::MissingTemplate (Missing template users/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/ellen/WA/Project5/app/views"
+):
+  app/controllers/users_controller.rb:68:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:47:36 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:47:42 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"e", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:50:15 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:50:37 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 7ms
+
+ArgumentError (Unknown validator: 'MessageValidator'):
+  app/models/user.rb:38:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:59:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 19ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:51:08 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"e", "last_name"=>"e", "login"=>"bieber", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('bieber') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:52:51 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('ellen') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 20ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:56:36 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('ellen') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:57:06 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 08:59:41 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 22ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 08:59:42 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 08:59:42 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 08:59:42 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 08:59:42 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 08:59:42 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 08:59:42 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password2"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password2
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 22ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:32 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:03:38 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:38 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:38 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:38 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:38 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:39 -0800
+
+
+Started GET "/users/index" for 127.0.0.1 at 2015-02-13 09:03:51 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:52 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:52 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:52 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:52 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:03:53 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:53 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:53 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:53 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:53 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:03:55 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:55 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:55 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:55 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:55 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:03:57 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:04:34 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 41ms (Views: 32.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:34 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:34 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:34 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:34 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:36 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:04:50 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameters: password, password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:04:50 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:51 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:51 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:51 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:04:51 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:04:51 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:06:08 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 39ms (Views: 32.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:06:08 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:06:08 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:06:08 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:06:08 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:06:13 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/models/user.rb:15:in `password='
+  app/controllers/users_controller.rb:59:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:07:51 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('test') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:07:51 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:51 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:52 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:52 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:52 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:07:52 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 11ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:07:59 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:10:02 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 53ms (Views: 45.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:10:02 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:10:02 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:10:02 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:10:02 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:10:05 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 7ms
+
+SystemStackError (stack level too deep):
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:79
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:10:37 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 7ms
+
+NameError (undefined local variable or method `password' for #<Class:0x007fb2962951a8>):
+  app/models/user.rb:14:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:59:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.3ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:13:46 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `password_virtual_attr=' for #<User:0x007fb2951bf888>):
+  app/models/user.rb:21:in `password='
+  app/controllers/users_controller.rb:59:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.7ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:15:01 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `password_virtual_attr=' for #<User:0x007fb29560f0a0>):
+  app/models/user.rb:21:in `password='
+  app/controllers/users_controller.rb:59:in `create'
+
+
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ellen/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 21ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:19:42 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('ellen') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:20:03 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "user"=>{"first_name"=>"Ellen", "last_name"=>"Tsay", "login"=>"ellen", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('ellen') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "login", "password_digest", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2015-02-13 17:20:28.590628"], ["first_name", "Ellen"], ["last_name", "Tsay"], ["login", "ellen"], ["password_digest", "d2c9fecc2b45b428f08cad79f50d53ed774ab4c2"], ["salt", "0.6720792130949516"], ["updated_at", "2015-02-13 17:20:28.590628"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos/index?id=7
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/photos/index?id=7" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 7 LIMIT 1
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (6.7ms)
+  Rendered shared/_message.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:20:28 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:24:54 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:55 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:55 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:55 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:55 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:24:57 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 43ms (Views: 34.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:57 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:57 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:57 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:24:57 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:25:07 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:07 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:07 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:07 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:07 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSVp/ZxLed0o49XMDuE6tSKVKUjZEzNBaruvA+U/RiU=", "login"=>"ellen", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = 'ellen' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 7 LIMIT 1[0m
+Redirected to http://localhost:3000/photos/index?id=7
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/photos/index?id=7" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+Processing by PhotosController#index as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 7 LIMIT 1
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT "photos".* FROM "photos"  WHERE "photos"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (4.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 7 LIMIT 1
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:25:11 -0800
+
+
+Started GET "/users/logout" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:14 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:25:16 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:16 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:16 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:16 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:16 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPA0PiqtS3OBtibXpD9M6+WVEBbrGTLMtroiN2wVFBw=", "user"=>{"first_name"=>"Suping", "last_name"=>"Tsay", "login"=>"suping", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('suping') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "login", "password_digest", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-13 17:25:25.736581"], ["first_name", "Suping"], ["last_name", "Tsay"], ["login", "suping"], ["password_digest", "8ac04880c54c35528866628bd17973823900dbc6"], ["salt", "0.42633428308619825"], ["updated_at", "2015-02-13 17:25:25.736581"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.1ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+
+
+Started GET "/assets/happy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:25:25 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPA0PiqtS3OBtibXpD9M6+WVEBbrGTLMtroiN2wVFBw=", "login"=>"f", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."login" = 'f' LIMIT 1[0m
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.2ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:25:59 -0800
+
+
+Started POST "/users/post_login" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+Processing by UsersController#post_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPA0PiqtS3OBtibXpD9M6+WVEBbrGTLMtroiN2wVFBw=", "login"=>"", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."login" = '' LIMIT 1
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.3ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:26:02 -0800
+
+
+Started GET "/users/login" for 127.0.0.1 at 2015-02-13 09:26:06 -0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:06 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:06 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:06 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:06 -0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:26:08 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:08 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:08 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:08 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:08 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPA0PiqtS3OBtibXpD9M6+WVEBbrGTLMtroiN2wVFBw=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 11ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:10 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPA0PiqtS3OBtibXpD9M6+WVEBbrGTLMtroiN2wVFBw=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+  Rendered shared/_message.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:17 -0800
+
+
+Started POST "/users/create" for 127.0.0.1 at 2015-02-13 09:26:24 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPA0PiqtS3OBtibXpD9M6+WVEBbrGTLMtroiN2wVFBw=", "user"=>{"first_name"=>"", "last_name"=>"", "login"=>"test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."login") = LOWER('test') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-02-13 09:26:24 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  Rendered shared/_message.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:24 -0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:24 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:24 -0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-13 09:26:24 -0800
+
+
+Started GET "/assets/grumpy_cat.jpg" for 127.0.0.1 at 2015-02-13 09:26:24 -0800

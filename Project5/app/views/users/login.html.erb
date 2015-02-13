@@ -9,6 +9,11 @@
 	    	<%= label_tag(:login, "Username", :class => "form_label") %>
 	    	<%= text_field_tag(:login, nil, :class => "form_field login_field") %>
 		</li>
-	    <li><%= submit_tag("Log In", :class => "form_button login_button") %></li>
+		<li>
+	    	<%= label_tag(:password, "Password", :class => "form_label") %>
+	    	<%= text_field_tag(:password, nil, :class => "form_field login_field") %>
+		</li>
+	    <li><%= submit_tag("Log in", :class => "form_button login_button") %></li>
+	   	<li><a href = "/users/new">Create An Account</li>
 	</ul>
 <% end %>
