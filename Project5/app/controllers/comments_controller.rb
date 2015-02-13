@@ -1,18 +1,24 @@
 class CommentsController < ApplicationController
-  
+
+#comments/new/id displays form where user adds comment for a photo whose primary key is id  
   def new
-  	@photo = Photo.find_by_id(params[:id])
+  	@photo = Photo.find(params[:id])
+  	@comment = Comment.new()
   end
 
   def create
-  	current_photo = Photo.find_by_id(params[:id])
-  	@@new_comment = Comment.new
-  	@@new_comment.photo_id = current_photo.id
-  	@@new_comment.user_id = session[:current_user_id]
-  	@@new_comment.date_time = Time.now.utc
-  	@@new_comment.comment = params[:comment]
-  	@@new_comment.save
-  	current_photo.comments << @@new_comment
-  	redirect_to(:controller => :photos, :action => :index, :id => current_photo.user.id)
+  	@comment = Comment.new(comment_params(params[:comment]))
+  	if @comment.save
+	  	redirect_to(:controller => :photos, :action => :index, :id => @comment.photo.user_id)
+	else
+		flash[:error] = @comment.errors.full_messages.first
+		redirect_to(:action => :new, :id => @comment.photo.id)
+	end
   end
+
+  private
+  def comment_params(params)
+  	return params.permit(:comment, :id, :date_time, :photo_id, :user_id)
+  end
+
 end

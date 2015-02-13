@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		  			redirect_to(:controller => :photos, :action => :index, :id => session[:current_user_id])
 		  		else
 	  			# If no user exists with the given login, redisplay login form with error message.
-	  				flash[:error] = "Wrong login info. Try again."
+	  				flash[:error] = "Invalid username"
 	  				redirect_to(:action => :login)
 	  			end
 	  	end
@@ -34,9 +34,14 @@ class UsersController < ApplicationController
   	def logout
   	#Logs user out by clearing information stored in session.
   	#URL redirects back to login page
-  		reset_session
-  		flash[:success] = "You have been logged out"
-  		redirect_to(:action => :login)
+  		if !logged_in?
+  			flash[:error] = "You are already logged out"
+  			redirect_to(:action => :login)
+  		else
+	  		reset_session
+	  		flash[:success] = "You have been logged out"
+	  		redirect_to(:action => :login)
+	  	end
  	end
 
 end
