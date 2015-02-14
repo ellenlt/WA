@@ -29,7 +29,7 @@
 						<li class="<%= cycle('odd', 'even') %>">
 							<a class="user_link" href="<%= comment.user_id %>"><b><%= comment.user.full_name %>:</b></a>
 							<%= comment.comment %>
-							<div class="detail"><%= comment.date_time.strftime("%l:%M %p on %B %-d, %Y") %></div>
+							<div class="detail"><%= comment.date_time.getlocal.strftime("%l:%M %p on %B %-d, %Y") %></div>
 						</li>
 						<% end %>
 					<% end %>

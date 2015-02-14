@@ -26,7 +26,7 @@ class PhotosController < ApplicationController
   		flash[:error] = "Must be logged in to upload photos."
         redirect_to(:controller => :users, :action => :login)
     # Checks if photo was uploaded before submitting
-    elsif params[:photo][:photo] == nil
+    elsif params[:file] == nil
     	flash[:error] = "Invalid photo"
     	redirect_to(:action => :new)
  	else	
@@ -34,15 +34,17 @@ class PhotosController < ApplicationController
 		@photo = Photo.new()
 		
 		# Saves photo to /app/assets/images/filename
-		photo_file = params[:photo][:photo]
+		photo_file = params[:file]
 		File.open(Rails.root.join('app', 'assets', 'images', photo_file.original_filename), 'wb') do |file|
 	  		file.write(photo_file.read)
-	  	end
+	  end
 
 		#Saves name of photo file
-	  	@photo.file_name = photo_file.original_filename
+	  @photo.file_name = photo_file.original_filename
+    @photo.user_id = session[:current_user_id]
+    @photo.date_time = DateTime.now
 
-	  	@photo.save()
+	  @photo.save()
 		redirect_to(:controller => :photos, :action => :index, :id => session[:current_user_id])
 	end
 
