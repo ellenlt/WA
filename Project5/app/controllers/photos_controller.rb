@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
     	redirect_to(:action => :new)
  	else	
 		# Creates new photo record in database
-		@photo = Photo.new()
+		photo = Photo.new()
 		
 		# Saves photo to /app/assets/images/filename
 		photo_file = params[:file]
@@ -40,11 +40,11 @@ class PhotosController < ApplicationController
 	  end
 
 		#Saves name of photo file
-	  @photo.file_name = photo_file.original_filename
-    @photo.user_id = session[:current_user_id]
-    @photo.date_time = DateTime.now
+	  photo.file_name = photo_file.original_filename
+    photo.user_id = session[:current_user_id]
+    photo.date_time = DateTime.now
 
-	  @photo.save()
+	  photo.save()
 		redirect_to(:controller => :photos, :action => :index, :id => session[:current_user_id])
 	end
 

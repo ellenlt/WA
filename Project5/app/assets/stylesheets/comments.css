@@ -3,6 +3,13 @@
 	margin-right: auto;
 	width: 50%;
 	text-align: center;
+	list-style: none;
+	padding:0;
+}
+
+.comments_box li {
+	margin: 10px 0px;
+	padding: 0;
 }
 
 .photo_for_comments {

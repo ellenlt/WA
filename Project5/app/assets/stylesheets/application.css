@@ -114,16 +114,12 @@ a:hover {
 }
 
 /* Form formatting */
-.form_items {
-	list-style: none;
-	padding:0;
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	text-align:center;
 }
-
-.form_items li {
-	margin: 10px 0px;
-	padding: 0;
-}
-
 .form_button {
 	font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
 	background-color: #EF7998;

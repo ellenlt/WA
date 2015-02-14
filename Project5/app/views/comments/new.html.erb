@@ -2,10 +2,9 @@
 
 <% if @photo then %>
 	<% @title = "Make Comment" %>
-
-	<%= form_for(@comment, url: {:action => :create, :id => @photo.id}, :html=>{:class=> "comments_box"}) do |f| %>
-	    <h2>Make a comment:</h2>
-	    <ul class = "form_items">
+	<h2 class = "centered">Make a comment:</h2>
+	<%= form_for(@comment, url: {:action => :create, :id => @photo.id}) do |f| %>
+	    <ul class = "comments_box">
 		    <li><%= f.text_area(:comment, :class => "form_field comment_field") %></li>
 		    <li><%= f.hidden_field(:user_id, :value => session[:current_user_id]) %></li>
 		    <li><%= f.hidden_field(:photo_id, :value => @photo.id) %></li>

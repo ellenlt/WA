@@ -47,3 +47,25 @@ ul.comments {
 .detail {
 	font-size: 13px;
 }
+
+.upload_box {
+	list-style: none;
+	padding:0;
+	margin: 0;
+	width: 10%;
+	text-align: center;
+}
+
+.upload_box li {
+	margin: 10px 0px;
+	padding: 0;
+}
+
+.upload_button {
+	width: 25%;
+}
+
+.upload_field {
+	height: 20px;
+	font-size: 14px;
+}
