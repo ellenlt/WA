@@ -70294,3 +70294,115 @@ Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-02-16 16:56:49 -080
 
 
 Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2015-02-16 16:56:49 -0800
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddSessionsTable (20150131201139)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150131201139"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20150131201829)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150131201829"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateComments (20150203083259)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo_id" integer, "user_id" integer, "date_time" datetime, "comment" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150203083259"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePhotos (20150203083806)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "date_time" datetime, "file_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150203083806"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to LoadData (20150203212730)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "photos"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.040258"], ["first_name", "Justin"], ["last_name", "Bieber"], ["updated_at", "2015-02-17 00:57:52.040258"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.044369"], ["first_name", "Paris"], ["last_name", "Hilton"], ["updated_at", "2015-02-17 00:57:52.044369"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.045438"], ["first_name", "Miley"], ["last_name", "Cyrus"], ["updated_at", "2015-02-17 00:57:52.045438"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.046434"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", "2015-02-17 00:57:52.046434"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.047457"], ["first_name", "Santa"], ["last_name", "Claus"], ["updated_at", "2015-02-17 00:57:52.047457"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.048393"], ["first_name", "John"], ["last_name", "Ousterhout"], ["updated_at", "2015-02-17 00:57:52.048393"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.067199"], ["date_time", "2012-08-30 10:44:23.000000"], ["file_name", "ouster.jpg"], ["updated_at", "2015-02-17 00:57:52.067199"], ["user_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.069270"], ["date_time", "2009-09-13 20:00:00.000000"], ["file_name", "bieber1.jpg"], ["updated_at", "2015-02-17 00:57:52.069270"], ["user_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.070605"], ["date_time", "2009-09-13 20:05:03.000000"], ["file_name", "bieber2.jpg"], ["updated_at", "2015-02-17 00:57:52.070605"], ["user_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.071890"], ["date_time", "2013-11-18 18:02:00.000000"], ["file_name", "hilton1.jpg"], ["updated_at", "2015-02-17 00:57:52.071890"], ["user_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.073168"], ["date_time", "2013-09-20 17:30:00.000000"], ["file_name", "hilton2.jpg"], ["updated_at", "2015-02-17 00:57:52.073168"], ["user_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.074511"], ["date_time", "2009-07-10 16:02:49.000000"], ["file_name", "obama1.jpg"], ["updated_at", "2015-02-17 00:57:52.074511"], ["user_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.075667"], ["date_time", "2010-03-18 23:48:00.000000"], ["file_name", "obama2.jpg"], ["updated_at", "2015-02-17 00:57:52.075667"], ["user_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.076790"], ["date_time", "2010-08-30 14:26:00.000000"], ["file_name", "obama3.jpg"], ["updated_at", "2015-02-17 00:57:52.076790"], ["user_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.078063"], ["date_time", "2013-12-03 09:02:00.000000"], ["file_name", "cyrus1.jpg"], ["updated_at", "2015-02-17 00:57:52.078063"], ["user_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.079179"], ["date_time", "2013-12-03 09:03:00.000000"], ["file_name", "cyrus2.jpg"], ["updated_at", "2015-02-17 00:57:52.079179"], ["user_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-02-17 00:57:52.080181"], ["date_time", "2013-09-04 09:16:32.000000"], ["file_name", "santa1.jpg"], ["updated_at", "2015-02-17 00:57:52.080181"], ["user_id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("created_at", "date_time", "file_name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-02-17 00:57:52.081227"], ["date_time", "2013-10-16 17:12:28.000000"], ["file_name", "obama4.jpg"], ["updated_at", "2015-02-17 00:57:52.081227"], ["user_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "Learning new programming languages is hard..."], ["created_at", "2015-02-17 00:57:52.087955"], ["date_time", "2012-09-02 14:01:00.000000"], ["photo_id", 1], ["updated_at", "2015-02-17 00:57:52.087955"], ["user_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["comment", "This is another comment, with a bit more text; if the text gets long enough, does it wrap properly from line to line?"], ["created_at", "2015-02-17 00:57:52.089659"], ["date_time", "2013-09-06 14:02:00.000000"], ["photo_id", 1], ["updated_at", "2015-02-17 00:57:52.089659"], ["user_id", 6]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "If you see this text in <b>boldface</b> then HTML escaping isn't working properly."], ["created_at", "2015-02-17 00:57:52.090804"], ["date_time", "2013-09-08 14:06:00.000000"], ["photo_id", 1], ["updated_at", "2015-02-17 00:57:52.090804"], ["user_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["comment", "No, people, she is *not* my mom.  She's my date."], ["created_at", "2015-02-17 00:57:52.092000"], ["date_time", "2009-09-14 18:07:00.000000"], ["photo_id", 2], ["updated_at", "2015-02-17 00:57:52.092000"], ["user_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "I came up with lots of comments for this photo, but unfortunately none of them are printable."], ["created_at", "2015-02-17 00:57:52.093202"], ["date_time", "2013-11-28 17:45:13.000000"], ["photo_id", 5], ["updated_at", "2015-02-17 00:57:52.093202"], ["user_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["comment", "Hey Barack, great form! Can u give me n Lindsay some bowling tips? xxoo Paris"], ["created_at", "2015-02-17 00:57:52.094369"], ["date_time", "2013-11-02 14:07:00.000000"], ["photo_id", 7], ["updated_at", "2015-02-17 00:57:52.094369"], ["user_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "Sure, let's get together when Lindsay gets out of rehab and I get healthcare.gov working."], ["created_at", "2015-02-17 00:57:52.095499"], ["date_time", "2013-11-02 14:07:00.000000"], ["photo_id", 7], ["updated_at", "2015-02-17 00:57:52.095499"], ["user_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["comment", "We're off to a Justin Bieber concert"], ["created_at", "2015-02-17 00:57:52.096619"], ["date_time", "2010-09-06 13:59:33.000000"], ["photo_id", 8], ["updated_at", "2015-02-17 00:57:52.096619"], ["user_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "He kept trying to tell me that healthcare.gov is fixed, but I could see as plain as day that they forgot a </div>. Can anyone tell me why we're building this site in Java instead of Rails?"], ["created_at", "2015-02-17 00:57:52.097779"], ["date_time", "2013-10-16 18:04:55.000000"], ["photo_id", 12], ["updated_at", "2015-02-17 00:57:52.097779"], ["user_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["comment", "To all my fans, I just want to say how sorry I am that my tongue is always sticking out. Unfortunately, it's a medical condition called 'lingua toobigga'. You see, when I went through puberty my tongue grew at a rate faster than the rest of me. As a result, it's just too large for my mouth. If I keep my tongue entirely in my mouth, I can't breathe! That's why you only see it inside my mouth for brief periods of time. I even have a special device I wear at night, which attaches to my tongue and pulls it out so I can sleep safely."], ["created_at", "2015-02-17 00:57:52.098891"], ["date_time", "2013-12-04 13:12:00.000000"], ["photo_id", 10], ["updated_at", "2015-02-17 00:57:52.098891"], ["user_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("comment", "created_at", "date_time", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["comment", "I'm going to be watching how well you do in CS 142!"], ["created_at", "2015-02-17 00:57:52.100068"], ["date_time", "2013-09-04 10:14:32.000000"], ["photo_id", 11], ["updated_at", "2015-02-17 00:57:52.100068"], ["user_id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150203212730"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddLoginToUsers (20150213180256)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "login" varchar(255)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "login" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["login", "bieber"], ["updated_at", "2015-02-17 00:57:52.111211"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "login" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["login", "hilton"], ["updated_at", "2015-02-17 00:57:52.113045"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "login" = ?, "updated_at" = ? WHERE "users"."id" = 3  [["login", "cyrus"], ["updated_at", "2015-02-17 00:57:52.113823"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "login" = ?, "updated_at" = ? WHERE "users"."id" = 4[0m  [["login", "obama"], ["updated_at", "2015-02-17 00:57:52.114595"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "login" = ?, "updated_at" = ? WHERE "users"."id" = 5  [["login", "claus"], ["updated_at", "2015-02-17 00:57:52.115237"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "login" = ?, "updated_at" = ? WHERE "users"."id" = 6[0m  [["login", "ousterhout"], ["updated_at", "2015-02-17 00:57:52.115848"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150213180256"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddPasswordDigestAndSaltToUsers (20150213180341)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "salt" varchar(255)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["password_digest", "e7d7a3d202a379c82868e9fae7cf78d8982b0543"], ["salt", "0.02206482840055224"], ["updated_at", "2015-02-17 00:57:52.126847"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["password_digest", "78100f7f9e25d79ddd51d088367a2d2f02f0e723"], ["salt", "0.8130307494332936"], ["updated_at", "2015-02-17 00:57:52.128064"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 3  [["password_digest", "b486fc82915cb00837df255184aab5a3b1d5d614"], ["salt", "0.7678892797827404"], ["updated_at", "2015-02-17 00:57:52.128903"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 4[0m  [["password_digest", "8c6c7ac5a4cbe7128f2246ea0832f31adbb97c9d"], ["salt", "0.2182464167296846"], ["updated_at", "2015-02-17 00:57:52.129610"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 5  [["password_digest", "09daa23529509352c4b40f244dd1013967dac0a5"], ["salt", "0.09742620077714448"], ["updated_at", "2015-02-17 00:57:52.130333"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "salt" = ?, "updated_at" = ? WHERE "users"."id" = 6[0m  [["password_digest", "6258113d8a7fbd25c6fdd800577bba341e74bbb3"], ["salt", "0.28908621492655573"], ["updated_at", "2015-02-17 00:57:52.131005"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150213180341"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_updated_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_updated_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+
