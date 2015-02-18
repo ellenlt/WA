@@ -19,7 +19,12 @@
 
 				<div class="info_column">
 					<!-- display date/time photo was taken and number of comments -->				
-					<span class="detail"><%= photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %> | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %></span>
+					<span class="detail"><%= photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %>
+					 | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %>
+					 <% if logged_in? && photo.user == @current_user then %>
+					 	 | <%= link_to "Delete Photo", {:action => :delete, :id => photo.id} %>
+					 <% end %>
+					</span>
 
 					<ul class="comments">
 					<!-- display comments on the photo -->
@@ -27,7 +32,7 @@
 						<!-- for each photo display commenter's name, comment and date/time of comment -->
 						<% for comment in photo.comments do %>
 						<li class="<%= cycle('odd', 'even') %>">
-							<a class="user_link" href="<%= comment.user_id %>"><b><%= comment.user.full_name %>:</b></a>
+							<b><%= link_to "#{comment.user.full_name}:", {:id => comment.user_id} %></b>
 							<%= comment.comment %>
 							<div class="detail"><%= comment.date_time.getlocal.strftime("%l:%M %p on %B %-d, %Y") %></div>
 						</li>
@@ -35,9 +40,7 @@
 					<% end %>
 						<li>
 							<% if logged_in? then %>
-							<a href="/comments/new/<%= photo.id %>"><b>Make a comment</b></a>
-							<% else %>
-							<b>Make a comment</b>
+							<b><%= link_to "Make a comment", {:controller => :comments, :action => :new, :id => photo.id} %></b>
 							<% end %>
 						</li>
 					</ul>

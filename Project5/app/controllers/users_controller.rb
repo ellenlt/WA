@@ -81,6 +81,38 @@ class UsersController < ApplicationController
   		end
   	end
 
+    # Form for user to change his or her password
+    def password
+        if !logged_in?
+          flash[:error] = "Must log in to change password"
+          redirect_to(:action => :login)
+        else
+          @user = User.find(current_user_id)
+        end
+    end
+
+    # Allows user to change his or her password
+    def change_password
+      #if not logged in, display error message
+      if !logged_in?
+          flash[:error] = "Must log in to change password"
+          redirect_to(:action => :login)
+      else
+        current_user = User.find(current_user_id)
+        if current_user.update(user_params(params[:user])) then
+          reset_session
+          flash[:success] = "Password successfully updated"
+          redirect_to(:action => :login)
+        else
+          current_user.errors.full_messages.each do |mess|
+            flash[:error] = mess
+          end
+          redirect_to(:action => :password)
+        end
+      end
+    end
+
+
  	private
   	def user_params(params)
   		return params.permit(:first_name, :last_name, :login, :password_digest, 

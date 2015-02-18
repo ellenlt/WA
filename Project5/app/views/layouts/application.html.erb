@@ -17,21 +17,19 @@
 		<div id = "navbar_container">
 			<div id = "navbar" class = "foreground">
 				<!-- Link to all users page -->
-				<a class = "navitem" href = "/users/index">People</a>
-
+				<%= link_to "People", {:controller => :users, :action => :index}, :class => "navitem" %>
 				<!-- Display photo upload link for logged in users -->
 				<% if logged_in? then %>
-					<a class = "navitem" href = "/photos/new">Upload Photo</a>
-				<% else %>
-					<span class = "navitem">Upload Photo</span>
+					<%= link_to "Upload Photo", {:controller => :photos, :action => :new}, :class => "navitem" %>
+					<%= link_to "Change Password", {:controller => :users, :action => :password}, :class => "navitem" %>
 				<% end %>
 
 				<!-- Displays login/logout link and welcome message -->
 				<% if logged_in? then %>
-					<a class = "navitem login_logout" href = "/users/logout">Logout</a>
+					<%= link_to "Logout", {:controller => :users, :action => :logout}, :class => "login_logout" %>
 					<span class = "navitem welcome">Hi <%=current_user_first_name%>!</span>
 				<% else %>
-					<a class = "login_logout" href = "/users/login">Login</a>
+					<%= link_to "Login", {:controller => :users, :action => :login}, :class => "login_logout" %>
 				<% end %>
 
 			</div>

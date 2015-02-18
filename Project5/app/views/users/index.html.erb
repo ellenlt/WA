@@ -9,9 +9,8 @@
 		<% id = user.id %>
 		<tr class="<%= cycle('odd', 'even') %>">
 			<td class="users_table_cell">
-				<a class="user_link" href = "/photos/index/<%= id %>">
-					<%= id.to_s + ". " + user.full_name %>
-				</a>
+				<%= link_to "#{id.to_s}. #{user.full_name}", 
+				{:controller => :photos, :action => :index, :id => id}, :class => "user_link" %>
 			</td>
 		</tr>
 	<% end %>
