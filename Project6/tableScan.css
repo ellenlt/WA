@@ -13,7 +13,7 @@ body {font-family: Tahoma, Arial, sans-serif; font-size: 13px;
 
 #calc_container {font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;}
 
-#sum_button {width: 13%; height: 30px; font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+#sum_button {width: 150px; height: 30px; font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
 	background-color: #EF7998; color: white; font-size: 14px; text-decoration: none;
 	border:none; cursor: pointer;}
 

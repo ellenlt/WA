@@ -23,6 +23,7 @@ TableScan.sumColumn = function(id, str) {
 		sum = sum + cell;
 		}
 	}
+	sum = sum.toFixed(2);		//Sets sum to two decimal-pts
 	return sum;
 };
 
@@ -43,6 +44,18 @@ TableScan.indexOfCol = function(row, col) {
         }
     }
     return -1;
+};
+
+//Binds events for the sum calculator
+TableScan.bindCalcEvents = function() {
+	(document.getElementById("sum_calculator")).onsubmit = function(evt) {
+          var sumCalculator = document.getElementById("sum_calculator");
+          var tableId = sumCalculator.elements.namedItem("table_id").value;
+          var colName = sumCalculator.elements.namedItem("col_name").value;
+          var sum = TableScan.sumColumn(tableId, colName);
+          document.getElementById("display_sum").innerHTML = "<p>The <i>" + colName + "</i> column in the <i>" + tableId + "</i> table has a sum of: <b>" + sum + "</b></p>";
+          event.preventDefault();
+    };
 };
 
 

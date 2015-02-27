@@ -7,7 +7,6 @@ function Calendar(divId) {
 
 //Render method for Calendar objects
 Calendar.prototype.render = function(today) {
-	var calendar = this;
 	this.elem.innerHTML = "";		//Clear existing div contents
 
 	//Header containing month name, year, and buttons to go to previous and next months
@@ -42,12 +41,17 @@ Calendar.prototype.render = function(today) {
 		}
 	}
 
-	//Binds events to previous and next buttons
-	(document.getElementById(this.id + 'prev')).onclick = function(event) {
+	this.bindButtonEvents(today);
+};
+
+//Binds events to previous and next buttons
+Calendar.prototype.bindButtonEvents = function(today) {
+	var calendar = this;
+	(document.getElementById(this.id + 'prev')).onclick = function(evt) {
 		calendar.render(Calendar.prevMonth(today));
 		event.preventDefault();
 	};
-	(document.getElementById(this.id + 'next')).onclick = function (event) {
+	(document.getElementById(this.id + 'next')).onclick = function (evt) {
 		calendar.render(Calendar.nextMonth(today));
 		event.preventDefault();
 	};
