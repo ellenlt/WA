@@ -1,0 +1,23 @@
+/* CSS styles for a CS142 project. */
+
+body {font-family: Tahoma, Arial, sans-serif; font-size: 13px;
+    color: #000000; background: #ffffff; margin: 8px;}
+
+/* Styles for sample tables: */
+
+.example td {padding: 2px 10px 2px 10px; border-top: 1px solid #FFFFFF;
+    vertical-align: top; background: #eeeff2;}
+.example tr.header td {border-top: none; background: #687291;
+    color: #ffffff; white-space: nowrap;}
+.example tr.odd td {background: #dfe1e7;}
+
+#calc_container {font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;}
+
+#sum_button {width: 13%; height: 30px; font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+	background-color: #EF7998; color: white; font-size: 14px; text-decoration: none;
+	border:none; cursor: pointer;}
+
+form input{font-family: Didot,"Didot LT STD","Hoefler Text","Bodoni MT",Garamond,"Times New Roman",serif;
+	margin: 5px 0px;}
+
+.centered{margin-left: auto; margin-right: auto; width: 100%; text-align:center;}

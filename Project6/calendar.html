@@ -1,0 +1,26 @@
+<!-- Uses Calendar.js to display two calendar divs.
+	One calendar displays Feb 2015 and
+	the other displays the month of Jan 2009.
+	Can change the month of each cal independently. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>CS 142 Project 6, Problem 1</title>
+		<link rel="stylesheet" type="text/css" href="calendar.css"/>
+		<script type="text/javascript" src="Calendar.js"></script>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<script type="text/javascript">
+			//<![CDATA[
+				var cal1 = new Calendar("div1");
+				cal1.render(new Date("Jan 1, 2009"));
+				var cal2 = new Calendar("div2");
+				cal2.render(new Date("Feb 22, 2015"));
+			//]]>
+		</script>
+	</body>
+</html>
