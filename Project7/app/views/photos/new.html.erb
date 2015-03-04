@@ -1,0 +1,11 @@
+<!-- Displays form where user can upload a new photo -->
+
+<% @title = "Upload Photo" %>
+<h2 class = "centered">Select photo to upload:</h2>
+<%= form_tag({:action => "create"}, multipart: true) do %>
+
+    <ul class = "upload_box centered">
+	    <li><%= file_field_tag(:file, :class => "form_field upload_field") %></li>
+		<li><%= submit_tag("Upload", :class => "form_button upload_button") %></li>
+	</ul>
+<% end %>

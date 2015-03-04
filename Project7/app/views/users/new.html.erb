@@ -1,0 +1,32 @@
+<!-- Displays form for users to create a new account -->
+
+<% @title = "Sign Up" %>
+
+<h2 class = "centered">Create your account:</h2>
+
+<%= form_for(@user, :url => {:controller => :users, :action => :create}) do |f| %>
+    <table class = "signup_box" cellspacing = "5px">
+	    <tr>
+	    	<td><%= f.label(:first_name, "First name", :class => "form_label") %></td>
+	    	<td><%= f.text_field(:first_name, :class => "form_field login_field") %></td>
+		</tr>
+		<tr>
+	    	<td><%= f.label(:last_name, "Last name", :class => "form_label") %></td>
+	    	<td><%= f.text_field(:last_name, :class => "form_field login_field") %></td>
+		</tr>
+	    <tr>
+	    	<td><%= f.label(:login, "Username", :class => "form_label") %></td>
+	    	<td><%= f.text_field(:login, :class => "form_field login_field") %></td>
+		</tr>
+		<tr>
+	    	<td><%= f.label(:password, "Password", :class => "form_label") %></td>
+	    	<td><%= f.password_field(:password, :class => "form_field login_field") %></td>
+		</tr>
+		<tr>
+	    	<td><%= f.label(:password_confirmation, "Re-enter password", :class => "form_label") %></td>
+	    	<td><%= f.password_field(:password_confirmation, :class => "form_field login_field") %></td>
+		</tr>
+	</table>
+	<div>&nbsp;</div>
+	<div class = "centered"><%= f.submit("Sign Up", :class => "form_button signup_button") %></div>
+<% end %>

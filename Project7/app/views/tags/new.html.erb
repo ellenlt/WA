@@ -1,0 +1,29 @@
+<!-- Displays photo whose primary key is "id" and allows users to tag -->
+
+<% if @photo then %>
+<% @title = "Tag Photo" %>
+<h2 class = "centered">Click and drag to tag faces:</h2>
+<div id="photo_for_tags_container">
+<div id="photo_for_tags"><div id="tag"></div><img id="photo" src="/assets/<%= @photo.file_name %>"/></div>
+</div>
+<%= form_for(@tag, url: {:action => :create, :id => @photo.id}) do |f| %>
+	<%= f.hidden_field(:photo_id, :value => @photo.id) %>
+	<%= f.hidden_field(:user_id) %>
+	<%= f.hidden_field(:x_pos) %>
+	<%= f.hidden_field(:y_pos) %>
+	<%= f.hidden_field(:width) %>
+	<%= f.hidden_field(:height) %>
+<% end %>
+<%= javascript_include_tag "Tagger" %>
+<script type="text/javascript">
+  //<![CDATA[
+    	new Tagger("photo_for_tags", "tag");
+       //	new Tagger("photo_for_tags", "tag", "x_pos", "y_pos", "width", "height");
+  //]]>
+</script>
+
+
+<% else %>
+<% @title = "Page Not Found" %>
+<h1>Oh no! That photo does not exist! :(</h1>
+<% end %>

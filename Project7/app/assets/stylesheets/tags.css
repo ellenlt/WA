@@ -1,0 +1,32 @@
+#photo_for_tags {
+	display: inline-block;
+	line-height: 0px;
+	margin:0;
+	padding:0;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+
+#photo {
+	max-width: 100%;
+}
+
+#photo_for_tags_container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	line-height: 0px;
+}
+
+#tag {
+	border: 1px solid blue;
+	
+	visibility: hidden;
+	z-index: 10;
+	margin: 0;
+	padding:0;
+	position: absolute;
+}

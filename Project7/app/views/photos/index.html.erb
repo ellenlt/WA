@@ -1,0 +1,64 @@
+<% if @user %>
+
+	<!-- photos/index/id displays all of the photos belonging to a particular user.
+	  	 For each photo you must display the photo itself, the creation time for the photo, 
+	  	 and all of the comments for that photo. For each comment you must display 
+	  	 time when the comment was created, the name of the user who created the comment, 
+	  	 and the text of the comment. The creator for each comment should be a link 
+	  	 that can be clicked to switch to the photos page for that user.-->
+	<% @title = @user.full_name + "'s Photos" %>
+	<h1><%= @user.full_name + "'s Photos" %></h1>
+		<div id="photos_table">
+		<% for photo in @user.photos do %>
+			<!-- div for photo and associated information -->
+			<div class="photo">
+				<!-- display photo -->
+				<div class="photo_column"><img class="photo_container" src="/assets/<%=photo.file_name%>" alt="<%=photo.file_name%>"/></div>
+
+				<div class="info_column">
+					<!-- display date/time photo was taken, number of comments, tag and delete links for logged in users -->
+					<div class="detail"><%= photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %>
+					 | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %>
+					 <% if logged_in? %>
+					 	 | <%= link_to "Tag Photo", {:controller => :tags, :action => :new, :id => photo.id} %>
+					 	 <% if photo.user == @current_user then %>
+					 	 | <%= link_to "Delete Photo", {:action => :delete, :id => photo.id} %>
+					 	 <% end %>
+					 <% end %>
+					</div>
+					<!-- display tagged users -->
+					<div class="detail">
+						Tagged: 
+						<% for tag in photo.tags do %>
+							<%= tag.user.full_name %>, 
+						<% end %>
+					</div>
+					<!-- display comments on the photo, commenter's name, date/time of comment, link to create comment -->
+					<ul class="comments">					
+					<% if photo.num_comments>0 then %>
+						<% for comment in photo.comments do %>
+						<li class="<%= cycle('odd', 'even') %>">
+							<b><%= link_to "#{comment.user.full_name}:", {:id => comment.user_id} %></b>
+							<%= comment.comment %>
+							<div class="detail"><%= comment.date_time.getlocal.strftime("%l:%M %p on %B %-d, %Y") %></div>
+						</li>
+						<% end %>
+					<% end %>
+						<li>
+							<% if logged_in? then %>
+							<b><%= link_to "Make a comment", {:controller => :comments, :action => :new, :id => photo.id} %></b>
+							<% end %>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+		</div>
+
+<% else %>
+	
+	<!-- Error message if no user exists with the given id -->
+	<% @title = "Page Not Found" %>
+	<h1>Oh no! That user does not exist :(</h1>
+
+<% end %>
