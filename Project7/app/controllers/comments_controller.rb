@@ -18,12 +18,12 @@ class CommentsController < ApplicationController
   	@comment = Comment.new(comment_params(params[:comment]))
   	if @comment.save
 	  	redirect_to(:controller => :photos, :action => :index, :id => @comment.photo.user_id)
-	else
+	  else
       @comment.errors.full_messages.each do |mess|
-          flash[:error] = mess
+        flash[:error] = mess
       end
 		  redirect_to(:action => :new, :id => @comment.photo.id)
-	end
+	  end
   end
 
   private

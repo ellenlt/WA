@@ -22,11 +22,12 @@
 }
 
 #tag {
-	border: 1px solid blue;
-	
-	visibility: hidden;
+	border: 3px solid blue;
+	box-sizing: border-box;
 	z-index: 10;
 	margin: 0;
 	padding:0;
 	position: absolute;
 }
+
+#user_menu, #tag {visibility: hidden;}

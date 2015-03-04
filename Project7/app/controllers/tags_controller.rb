@@ -5,6 +5,8 @@ class TagsController < ApplicationController
       flash[:error] = "Must be logged in to tag."
       redirect_to(:controller => :users, :action => :login)
     elsif(params[:id] and Photo.exists?(params[:id]))
+    	@tag = Tag.new
+  		@users = User.all()
        	@photo = Photo.find(params[:id])
     	@tag = Tag.new()
     else
@@ -12,22 +14,28 @@ class TagsController < ApplicationController
       redirect_to(:controller => :users, :action => :index)
     end
   end
-=begin
+
   def create
-  	@comment = Comment.new(comment_params(params[:comment]))
-  	if @comment.save
-	  	redirect_to(:controller => :photos, :action => :index, :id => @comment.photo.user_id)
-	else
-      @comment.errors.full_messages.each do |mess|
-          flash[:error] = mess
-      end
-		  redirect_to(:action => :new, :id => @comment.photo.id)
+	@tag = Tag.new(tag_params(params[:tag]))
+  	if(!logged_in?)
+      flash[:error] = "Must be logged in to tag."
+      redirect_to(:controller => :users, :action => :login)
+    elsif(!params[:id] or !Photo.exists?(params[:id]))
+		flash[:error] = "Photo not found!"
+      	redirect_to(:controller => :users, :action => :index)
+    else
+  		if @tag.save
+	  		redirect_to(:controller => :photos, :action => :index, :id => @tag.photo.user.id)
+		else
+        	flash[:error] = "Tag unsuccessful"
+			redirect_to(:action => :new, :id => @tag.photo.id)
+		end
 	end
   end
 
   private
   def tag_params(params)
-  	return params.permit(:id, :date_time, :photo_id, :user_id)
+  	return params.permit(:id, :photo_id, :user_id, :x_pos, :y_pos, :width, :height)
   end
-=end
+
 end
