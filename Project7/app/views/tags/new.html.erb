@@ -12,13 +12,13 @@
 	<%= f.hidden_field(:y_pos) %>
 	<%= f.hidden_field(:width) %>
 	<%= f.hidden_field(:height) %>
-	<%= f.submit("Done Tagging", :class => "form_button comment_button") %>
+	<%= f.submit("Tag", :class => "form_button comment_button") %>
 <% end %>
 </div>
 <%= javascript_include_tag "Tagger" %>
 <script type="text/javascript">
   //<![CDATA[
-    	new Tagger("photo_for_tags", "tag", "x_pos", "y_pos", "width", "height");
+    	new Tagger("photo_for_tags", "tag", "tag_x_pos", "tag_y_pos", "tag_width", "tag_height", "user_menu");
   //]]>
 </script>
 

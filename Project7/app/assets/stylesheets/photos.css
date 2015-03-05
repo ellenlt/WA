@@ -24,6 +24,10 @@ ul.comments {
 	overflow:hidden;
 }
 
+.photo_column; {
+	position: relative;
+}
+
 #photos_table .info_column {
 	padding-left:40px;
 }

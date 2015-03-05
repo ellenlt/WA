@@ -16,7 +16,7 @@ class TagsController < ApplicationController
   end
 
   def create
-	@tag = Tag.new(tag_params(params[:tag]))
+	tag = Tag.new(tag_params(params[:tag]))
   	if(!logged_in?)
       flash[:error] = "Must be logged in to tag."
       redirect_to(:controller => :users, :action => :login)
@@ -24,11 +24,14 @@ class TagsController < ApplicationController
 		flash[:error] = "Photo not found!"
       	redirect_to(:controller => :users, :action => :index)
     else
-  		if @tag.save
-	  		redirect_to(:controller => :photos, :action => :index, :id => @tag.photo.user.id)
+  		if tag.save()
+  			flash[:success] = "You tagged #{tag.user.full_name}"
+	  		redirect_to(:controller => :photos, :action => :index, :id => tag.photo.user.id)
 		else
-        	flash[:error] = "Tag unsuccessful"
-			redirect_to(:action => :new, :id => @tag.photo.id)
+        	tag.errors.full_messages.each do |mess|
+  				flash[:error] = mess
+  			end
+			redirect_to(:action => :new, :id => tag.photo.id)
 		end
 	end
   end

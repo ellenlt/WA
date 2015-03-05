@@ -1,5 +1,5 @@
 //Tagger constructor
-function Tagger(photoID, tagID, x, y, width, height) {
+function Tagger(photoID, tagID, x, y, width, height, userMenu) {
     this.isMouseDown = false;
     var obj = this;
 	this.photo = document.getElementById(photoID);
@@ -8,7 +8,9 @@ function Tagger(photoID, tagID, x, y, width, height) {
 	this.yForm = document.getElementById(y);
 	this.widthForm = document.getElementById(width);
 	this.heightForm = document.getElementById(height);
-  	//Changes positioning context so that tag coordinates are relative to photo
+    this.userMenu = document.getElementById(this.userMenu);
+  	console.log(this.xForm);
+    //Changes positioning context so that tag coordinates are relative to photo
     this.photo.style.position = "relative";
     this.tag.style.position = "absolute";
     this.photo.addEventListener("mousedown", function(evt) {obj.mouseDown(evt)});
@@ -79,11 +81,11 @@ Tagger.prototype.mouseUp = function(evt) {
     this.isMouseDown = false;
     document.body.onmousemove = this.oldMoveHandler;
     document.body.onmouseup = this.oldUpHandler;
-    userMenu = document.getElementById("user_menu");
-    userMenu.style.visibility = "visible";
-    userMenu.style.position = "absolute";
-    userMenu.style.left = this.tagX + "px";
-    userMenu.style.top = this.tagY + this.tagHeight + "px";
+    this.userMenu = document.getElementById("user_menu");
+    this.userMenu.style.visibility = "visible";
+    this.userMenu.style.position = "absolute";
+    this.userMenu.style.left = this.tagX + "px";
+    this.userMenu.style.top = this.tagY + this.tagHeight + "px";
     this.xForm.value = this.tagX;
 	this.yForm.value = this.tagY;
 	this.widthForm.value = this.tagWidth;

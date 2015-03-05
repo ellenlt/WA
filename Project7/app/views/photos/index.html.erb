@@ -13,8 +13,9 @@
 			<!-- div for photo and associated information -->
 			<div class="photo">
 				<!-- display photo -->
-				<div class="photo_column"><img class="photo_container" src="/assets/<%=photo.file_name%>" alt="<%=photo.file_name%>"/></div>
-
+				<div class="photo_column" id="<%=photo.id%>">
+					<img class="photo_container" src="/assets/<%=photo.file_name%>" alt="<%=photo.file_name%>"/>
+				</div>
 				<div class="info_column">
 					<!-- display date/time photo was taken, number of comments, tag and delete links for logged in users -->
 					<div class="detail"><%= photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %>
@@ -29,8 +30,10 @@
 					<!-- display tagged users -->
 					<div class="detail">
 						Tagged: 
+						<% if defined? tag %>
 						<% for tag in photo.tags do %>
 							<%= tag.user.full_name %>, 
+						<% end %>
 						<% end %>
 					</div>
 					<!-- display comments on the photo, commenter's name, date/time of comment, link to create comment -->
@@ -54,14 +57,6 @@
 			</div>
 		<% end %>
 		</div>
-
-<%= javascript_include_tag "DisplayTags" %>
-<script type="text/javascript">
-  //<![CDATA[
-    	
-  //]]>
-</script>
-
 <% else %>
 	
 	<!-- Error message if no user exists with the given id -->
