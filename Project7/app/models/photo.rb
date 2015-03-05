@@ -5,4 +5,7 @@ class Photo < ActiveRecord::Base
 	def num_comments
 		self.comments.count
 	end
+	def num_tags
+		self.tags.count
+	end
 end

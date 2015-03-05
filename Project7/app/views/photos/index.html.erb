@@ -8,55 +8,33 @@
 	  	 that can be clicked to switch to the photos page for that user.-->
 	<% @title = @user.full_name + "'s Photos" %>
 	<h1><%= @user.full_name + "'s Photos" %></h1>
-		<div id="photos_table">
+
+		<ul class="photos_grid">
 		<% for photo in @user.photos do %>
-			<!-- div for photo and associated information -->
-			<div class="photo">
-				<!-- display photo -->
-				<div class="photo_column" id="<%=photo.id%>">
-					<img class="photo_container" src="/assets/<%=photo.file_name%>" alt="<%=photo.file_name%>"/>
-				</div>
-				<div class="info_column">
-					<!-- display date/time photo was taken, number of comments, tag and delete links for logged in users -->
-					<div class="detail"><%= photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %>
-					 | <%= photo.num_comments %> <% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %>
-					 <% if logged_in? %>
-					 	 | <%= link_to "Tag Photo", {:controller => :tags, :action => :new, :id => photo.id} %>
-					 	 <% if photo.user == @current_user then %>
-					 	 | <%= link_to "Delete Photo", {:action => :delete, :id => photo.id} %>
-					 	 <% end %>
-					 <% end %>
-					</div>
-					<!-- display tagged users -->
-					<div class="detail">
-						Tagged: 
-						<% if defined? tag %>
-						<% for tag in photo.tags do %>
-							<%= tag.user.full_name %>, 
-						<% end %>
-						<% end %>
-					</div>
-					<!-- display comments on the photo, commenter's name, date/time of comment, link to create comment -->
-					<ul class="comments">					
-					<% if photo.num_comments>0 then %>
-						<% for comment in photo.comments do %>
-						<li class="<%= cycle('odd', 'even') %>">
-							<b><%= link_to "#{comment.user.full_name}:", {:id => comment.user_id} %></b>
-							<%= comment.comment %>
-							<div class="detail"><%= comment.date_time.getlocal.strftime("%l:%M %p on %B %-d, %Y") %></div>
-						</li>
-						<% end %>
-					<% end %>
-						<li>
-							<% if logged_in? then %>
-							<b><%= link_to "Make a comment", {:controller => :comments, :action => :new, :id => photo.id} %></b>
-							<% end %>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<li class="grid_photo">
+				<a class = "grid_photo_container" href = "view/<%=photo.id%>" style="background-image: url(/assets/<%=photo.file_name%>)">
+					<span class = "grid_overlay" style="background-image: url(/assets/<%=photo.file_name%>)>
+						<span class = "grid_photo_info">
+						<%= photo.date_time.getlocal.strftime("%B %-d, %Y | %l:%M %p") %><br/>
+						<%= photo.num_comments %>
+						<% if (photo.num_comments!=1) then %>comments<% else %>comment<% end %></br>
+						<%= photo.num_tags %> tagged people
+						</span>
+					</span>
+				</a>
+				<span>
+				<% if logged_in? %>
+					 	 <%= link_to "Tag", {:controller => :tags, :action => :new, :id => photo.id} %>
+					 	 | <%= link_to "Comment", {:controller => :comments, :action => :new, :id => photo.id} %>
+			 	 <% end %>
+				<% if photo.user == @current_user then %>
+					 	 | <%= link_to "Delete", {:action => :delete, :id => photo.id} %>
+				<% end %>
+		</span>
+			</li>
 		<% end %>
-		</div>
+		</ul>
+
 <% else %>
 	
 	<!-- Error message if no user exists with the given id -->

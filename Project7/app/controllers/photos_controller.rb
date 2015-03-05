@@ -1,12 +1,16 @@
 class PhotosController < ApplicationController
   def index
-  	# photos/index/id displays all of the photos belonging to a particular user.
-  	# For each photo you must display the photo itself, the creation time for the photo, 
-  	# and all of the comments for that photo. For each comment you must display 
-  	# time when the comment was created, the name of the user who created the comment, 
-  	# and the text of the comment. The creator for each comment should be a link 
-  	# that can be clicked to switch to the photos page for that user.
+  	# photos/index/id displays all of the photos belonging to a particular user
+    # their creation times and other relevant info
   	@user = User.find_by_id(params[:id])
+    if logged_in?
+      @current_user = User.find(current_user_id)
+    end
+  end
+
+   # photos/view/id displays a particular photo along with its all of the comments and tags
+  def view
+    @photo = Photo.find_by_id(params[:id])
     if logged_in?
       @current_user = User.find(current_user_id)
     end
@@ -57,7 +61,7 @@ class PhotosController < ApplicationController
     if !logged_in?
       flash[:error] = "Must log in to delete photo"
       redirect_to(:action => :login)
-    elsif params[:id] and Photo.exists?(params[:id]) and Photo.find(params[:id]).user != @current_user
+    elsif params[:id] and Photo.exists?(params[:id]) and Photo.find(params[:id]).user != User.find(current_user_id)
       flash[:error] = "You cannot delete another user's photos."
       redirect_to(:action => :index, :id => current_user_id)
     elsif params[:id] and Photo.exists?(params[:id])

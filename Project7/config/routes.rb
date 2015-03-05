@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'photos/index'
 
+  get 'photos/view'
+
   get 'users/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

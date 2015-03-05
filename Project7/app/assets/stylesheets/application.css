@@ -24,6 +24,10 @@ body {
 }
 
 /* Link formatting */
+a {
+	cursor: pointer;
+}
+
 a, a:visited {
 	text-decoration: none;
     color: #EB577E;
