@@ -4,13 +4,14 @@
 	margin:0;
 	padding:0;
 	position: relative;
+	float:left;
 }
 
 #photo_for_tags_container {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	display: table;
+	display:table;
 	line-height: 0px;
 	overflow:hidden;
 }
@@ -24,4 +25,9 @@
 	position: absolute;
 }
 
-#user_menu, #tag {visibility: hidden;}
+#photo {
+	max-width: 500px;
+	margin-bottom: 10px;
+}
+
+#user_menu, #tag {display:none;}

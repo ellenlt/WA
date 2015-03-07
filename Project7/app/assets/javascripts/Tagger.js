@@ -26,7 +26,7 @@ Tagger.prototype.mouseDown = function(evt) {
     this.mouseY1 = evt.clientY;
     this.isMouseDown = true;
     evt.preventDefault();
-    this.tag.style.visibility = "visible";
+    this.tag.style.display = "block";
 }
 
 Tagger.prototype.mouseMove = function(evt) {
@@ -82,10 +82,10 @@ Tagger.prototype.mouseUp = function(evt) {
     document.body.onmousemove = this.oldMoveHandler;
     document.body.onmouseup = this.oldUpHandler;
     this.userMenu = document.getElementById("user_menu");
-    this.userMenu.style.visibility = "visible";
+    this.userMenu.style.display = "block";
     this.userMenu.style.position = "absolute";
     this.userMenu.style.left = this.tagX + "px";
-    this.userMenu.style.top = this.tagY + this.tagHeight + "px";
+    this.userMenu.style.top = this.tagY + this.tagHeight + 2 + "px";
     this.xForm.value = this.tagX;
 	this.yForm.value = this.tagY;
 	this.widthForm.value = this.tagWidth;
