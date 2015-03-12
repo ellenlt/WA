@@ -1,0 +1,9 @@
+<!-- Displays thumbnails of photos that resulted from a user's search -->
+
+<% if !@matching_photos.empty? then
+	@matching_photos.each do |photo| %>
+		<%= link_to :controller=>:photos, :action=>:view, :id=>photo.id do %>
+			<%= image_tag(photo.file_name, width: '100px', height: '100px') %>
+		<% end %>
+	<% end %>
+<% end %>

@@ -1,0 +1,90 @@
+<% if @photo %>
+<!-- Displays a particular photo along with its all of the comments and tags -->
+	<% @title = @photo.user.full_name + "'s Photo" %>
+	<h1><%= link_to @photo.user.full_name + "'s Photo", {:action => :index, :id => @photo.user.id} %></h1>
+	<div class="photo">
+		<!-- display photo -->
+		<div class="photo_column">
+			<% for tag in @photo.tags %>
+				<div class="displayed_tag" id="tag_<%=tag.id%>" style="left: <%=tag.x_pos%>px; top: <%=tag.y_pos%>px; width: <%=tag.width%>px; height: <%=tag.height%>px;"></div>
+				<div class="displayed_tag_label" id="tag_label_<%=tag.id%>" style="left: <%=tag.x_pos%>px; top: <%=tag.y_pos + tag.height%>px;"><%=tag.user.full_name%></div>
+			<% end %>
+			<img class="photo_container" src="/assets/<%=@photo.file_name%>" alt="<%=@photo.file_name%>"/>
+			
+		</div>
+		<div class="info_column">
+			<!-- display date/time photo was taken, number of comments, tag and delete links for logged in users -->
+			<div class="detail"><%= @photo.date_time.getlocal.strftime("%B %-d, %Y at %l:%M %p") %>
+			 | <%= @photo.num_comments %> <% if (@photo.num_comments!=1) then %>comments<% else %>comment<% end %>
+			 <% if logged_in? %>
+			 	 | <%= link_to "Tag Photo", {:controller => :tags, :action => :new, :id => @photo.id} %>
+			 	 <% if @photo.user == @current_user then %>
+			 	 | <%= link_to "Delete Photo", {:action => :delete, :id => @photo.id} %>
+			 	 <% end %>
+			 <% end %>
+			</div>
+			<!-- display tagged users and tags -->
+			<div class="detail">
+			<% if !@photo.tags.empty? %>
+				People tagged: 
+				<% for tag in @photo.tags do %>
+					<a id=tag_link_<%=tag.id%> ><%= tag.user.full_name %></a>, 
+				<% end %>
+				</br>Mouse over photo or names above to view tags
+			<% else %>
+				No people tagged
+			<% end %>
+			</div>
+
+			<!-- display comments on the photo, commenter's name, date/time of comment, link to create comment -->
+			<ul class="comments">					
+			<% if @photo.num_comments>0 then %>
+				<% for comment in @photo.comments do %>
+				<li class="<%= cycle('odd', 'even') %>">
+					<b><%= link_to "#{comment.user.full_name}:", {:action => :index, :id => comment.user_id} %></b>
+					<%= comment.comment %>
+					<div class="detail"><%= comment.date_time.getlocal.strftime("%l:%M %p on %B %-d, %Y") %></div>
+				</li>
+				<% end %>
+			<% end %>
+				<li>
+					<% if logged_in? then %>
+					<b><%= link_to "Make a comment", {:controller => :comments, :action => :new, :id => @photo.id} %></b>
+					<% end %>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+    <% @photo.tags.each do |tag| %>
+        var tag<%=tag.id%> = document.getElementById("tag_" + <%=tag.id%>);
+        tag<%=tag.id%>.onmouseover = function() {
+        	tag<%=tag.id%>.style.opacity="1";
+        	document.getElementById("tag_label_<%=tag.id%>").style.opacity="1";
+        };
+        tag<%=tag.id%>.onmouseout = function() {
+        	tag<%=tag.id%>.style.opacity = "0";
+        	document.getElementById("tag_label_<%=tag.id%>").style.opacity="0";
+        };
+
+        var tagLink<%=tag.id%> = document.getElementById("tag_link_" + <%=tag.id%>);
+        tagLink<%=tag.id%>.onmouseover = function() {
+        	tag<%=tag.id%>.style.opacity="1";
+        	document.getElementById("tag_label_<%=tag.id%>").style.opacity="1";
+        };
+        tagLink<%=tag.id%>.onmouseout = function() {
+        	tag<%=tag.id%>.style.opacity = "0";
+        	document.getElementById("tag_label_<%=tag.id%>").style.opacity="0";
+        };
+    <% end %>
+    //]]>
+    </script>
+
+<% else %>
+
+	<% @title = "Page Not Found" %>
+	<h1>Oh no! That photo does not exist :(</h1>
+
+<% end %>

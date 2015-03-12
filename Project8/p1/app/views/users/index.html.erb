@@ -1,0 +1,29 @@
+<!-- Displays list of all users in the database. User names are links that link to the photos for that user -->
+<% @title = "Users" %>
+
+<!-- Search form that allows users to search photos; implemented with Javascript at end of file -->
+<%= form_tag do %>
+    <%= label_tag(:substring, "Search photos: ", :class => "form_label") %>
+    <%= text_field_tag(:substring, nil, :class => "form_field login_field") %>
+<% end %>
+<div id="photo_search_results"></div>
+
+<p>Index of users:</p>
+<table class="users_table" cellspacing="0">
+	<% @users.each do |user| %>
+		<% id = user.id %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td class="users_table_cell">
+				<%= link_to "#{id.to_s}. #{user.full_name}", 
+				{:controller => :photos, :action => :index, :id => id}, :class => "user_link" %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<%= javascript_include_tag "PhotoSearch" %>
+<%= javascript_tag :type => "text/javascript" do %>
+	//Implements AJAX searching mechanism via filter_photos action method in the users controller
+	new ajaxSearch("users", "filter_photos", "substring", "photo_search_results");
+	
+<% end %>

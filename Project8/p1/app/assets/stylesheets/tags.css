@@ -1,0 +1,33 @@
+#photo_for_tags {
+	display: inline-block;
+	line-height: 0px;
+	margin:0;
+	padding:0;
+	position: relative;
+	float:left;
+}
+
+#photo_for_tags_container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	display:table;
+	line-height: 0px;
+	overflow:hidden;
+}
+
+#tag {
+	border: 4px solid #EB577E;
+	box-sizing: border-box;
+	z-index: 10;
+	margin: 0;
+	padding:0;
+	position: absolute;
+}
+
+#photo {
+	max-width: 500px;
+	margin-bottom: 10px;
+}
+
+#user_menu, #tag {display:none;}

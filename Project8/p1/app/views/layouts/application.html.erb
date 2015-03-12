@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id = "page_container">
+		<div id = "header_container">
+			<div id = "logo" class = "foreground">
+				<h1>Ellen Tsay</h1>
+			</div>
+		</div>
+		<div id = "navbar_container">
+			<div id = "navbar" class = "foreground">
+				<!-- Link to all users page -->
+				<%= link_to "People", {:controller => :users, :action => :index}, :class => "navitem" %>
+				<!-- Display photo upload link for logged in users -->
+				<% if logged_in? then %>
+					<%= link_to "Upload Photo", {:controller => :photos, :action => :new}, :class => "navitem" %>
+					<%= link_to "Change Password", {:controller => :users, :action => :password}, :class => "navitem" %>
+				<% end %>
+
+				<!-- Displays login/logout link and welcome message -->
+				<% if logged_in? then %>
+					<%= link_to "Logout", {:controller => :users, :action => :logout}, :class => "login_logout" %>
+					<span class = "navitem welcome">Hi <%=current_user_first_name%>!</span>
+				<% else %>
+					<%= link_to "Login", {:controller => :users, :action => :login}, :class => "login_logout" %>
+				<% end %>
+
+			</div>
+		</div>
+		<div id = "content" class = "foreground">
+			<!-- Displays any messages for user -->
+			<% if flash[:success] %>
+				<%= render(:partial=>"shared/message", :locals=> {:message_class => "success", :message => flash[:success]}) %>
+			<% end %>
+			<% if flash[:error] %>
+				<%= render(:partial=>"shared/message", :locals=> {:message_class => "error", :message => flash[:error]}) %>
+			<% end %>
+			
+			<%= yield %>
+		</div>
+		<div id = "footer_container">
+			<div id = "footer" class = "foreground">
+				<span> ©2015 Ellen Tsay | CS 142 | Stanford University </span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
