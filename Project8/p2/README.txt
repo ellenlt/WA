@@ -1,0 +1,3 @@
+The Netslip website was vulnerable to SQL injection attacks because it failed to escape data intermixed with code. The movies_controller.rb file substituted form field values directly into a SQL query used to display selected movies. An attacker could take advantage of this loophole by injecting SQL code into the form field via a POST request, and acquiring sensitive information such as credit card info in the HTTP response.
+
+To eliminate this loophole, we can use Rails' built in methods that automatically handle escaping. Instead of Movie.find_by_sql(SELECT * from movies WHERE genre = #{params[:genre]}) we can say Movie.where(genre: genre)
